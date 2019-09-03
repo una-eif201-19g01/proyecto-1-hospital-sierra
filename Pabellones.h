@@ -18,6 +18,8 @@ public:
 	char getGeneroPabellon();
 	void setGeneroPabellon(char&);
 	void setSectorPabellon(char&);
+	void ingresarPaciente(Paciente*);
+	void liberarCama(int);
 
 };
 #endif

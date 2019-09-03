@@ -14,7 +14,7 @@ protected:
 	string direccion;
 	string patologia;
 	string tipoCirugia;
-	string estado;
+	string estado;//0=de alta, 1=internado
 	string prioridad;
 	string fechaCirugia;
 	Camas* cama;
@@ -29,7 +29,7 @@ public:
 	void setDireccion(string& ) ;
 	void setPatologia(string&  ) ;
 	void setTipoCirugia(string& ) ;
-	void setEstado(string& ) ;
+	void setEstado() ;
 	void setPrioridad(string& ) ;
 	void setFechaCirujia(string& ) ;
 	void setCama(Camas * ) ;

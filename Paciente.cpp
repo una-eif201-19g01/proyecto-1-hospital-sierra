@@ -9,7 +9,7 @@ void Paciente::setApellido(string& apellido) { this->apellido(apellido); }
 void Paciente::setDireccion(string& direccion) { this->direccion(apellido); }
 void Paciente::setPatologia(string& patologia) { this->patologia(apellido); }
 void Paciente::setTipoCirugia(string& tipo) { tipoCirugia(tipo); }
-void Paciente::setEstado(string& estado) { this->estado(estado); }
+void Paciente::setEstado() { estado=(estado==0)?1:0; }
 void Paciente::setPrioridad(string& prioridad) { this->prioridad(prioridad); }
 void Paciente::setFechaCirujia(string& Fecha) { fechaCirugia(fecha); }
 void Paciente::setCama(Camas* cama) { this->cama(cama); }
