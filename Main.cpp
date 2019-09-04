@@ -2,38 +2,38 @@
 #include "Pabellon.h"
 #include "Especialidad.h"
 #include "Doctor.h"
-#include"Cama.h"
+#include "Cama.h"
 
 using namespace std;
 
 void menu();
-void limpiarCamas(Pabellon pab[10]);
 
 int main() {
-	
+	Paciente paciente1;
+	Cama *cama;
 	Doctor doctores[20];
     Pabellon pabellones[10];
 	Especialidad especialidades[10];
+	especialidades[0].setEspecialidad("Neumologia");
+	especialidades[0].setEspecialidad("Hematologia");
+	especialidades[0].setEspecialidad("Ortopedia");
+	especialidades[0].setEspecialidad("Dermatologia");
+	especialidades[0].setEspecialidad("Ginecologia");
+	especialidades[0].setEspecialidad("Urologia");
+	especialidades[0].setEspecialidad("Pediatria");
+	especialidades[0].setEspecialidad("Psiquiatria");
+	especialidades[0].setEspecialidad("Rehabilitacion");
+	especialidades[0].setEspecialidad("Nutriologia");
 	
-	limpiarCamas(Pabellones);
-	menu(pabellones,doctores);
+	menu(pabellones,doctores,especialidades,paciente1,*cama);
 	
 	return 0;
 }
 
-void limpiarCamas(Pabellon pab[10]){
-	for(int fil=0;fil<10;fil++){
-		for(int cam=0;cam<10;cam++){
-			if(pab[fil]->cama[cam]->paciente->getEstado()==0)
-					pab[fil]->cama[cam]->liberarCama();
-		}
-	}
-}
-
-void menu(Pabellon pab[10],Doctor doc[20]) {
-	int respuesta,op1;
+void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama *cam) {
+	int respuesta,op1,estado;
 	int cont=1;
-	string esp1,cedula,nombre,apellido,direccion,patologia,tipoCirugia,estado,prioridad,fechaCirugia;
+	string esp1,cedula,nombre,apellido,direccion,patologia,tipoCirugia,prioridad,fechaCirugia;
 	bool rs1;
 	do {
 		cout<<"------------------------------------------------------------------------"<<endl;
@@ -53,22 +53,23 @@ void menu(Pabellon pab[10],Doctor doc[20]) {
 		
 		switch (respuesta) {
 		case 1:
-			if()
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cout<<"   * En cual especialidad va a ingresar el paciente?:  "<<endl;
+			cout<<"------------------------------------------------------------------------"<<endl;
+			for(int es=0;es<10;es++){
+				cout<<esp->getEspecialidades()<<endl;
+			}
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cin>>esp1;
 			for(int fil=0;fil<10;fil++){
 				if(esp1==especialidades[fil])
 					rs1=true;
-					esp11=fil;
 			}
 			if(rs1==true){
 				for(int pab1=0;pab1<10;pab1++){
-					for(int cam=0;cam<10;cam++){
-						if(pab[pab]->cama[cam]->getEstado()==0){
-							pab[pab]->cama[cam]->Paciente->setEstado("1");
-							pab[pab]->cama[cam]->Paciente->setCama(cama[cam]);
+					for(int cam1=0;cam1<10;cam1++){
+						if(pab[pab]->cama[cam1]->getEstado()==0){
+							cam=cama[cam1];
 							cout<<"------------------------------------------------------------------------"<<endl;
 							cout<<"   * Ingrese los datos del paciente:  "<<endl;
 							cout<<"------------------------------------------------------------------------"<<endl;
@@ -88,19 +89,12 @@ void menu(Pabellon pab[10],Doctor doc[20]) {
 							cin>>prioridad,
 							cout<<"   * Fecha de la cirugia:"<<endl;
 							cin>>fechaCirugia;
-							pab[pab]->cama[cam]->Paciente->setCedula(cedula);
-							pab[pab]->cama[cam]->Paciente->setNombre(nombre);
-							pab[pab]->cama[cam]->Paciente->setApellido(apellido);
-							pab[pab]->cama[cam]->Paciente->setDireccion(direccion);
-							pab[pab]->cama[cam]->Paciente->setPatologia(patologia]);
-							pab[pab]->cama[cam]->Paciente->setTipoCirugia(tipoCirugia);
-							pab[pab]->cama[cam]->Paciente->setPrioridad(prioridad);
 							pab[pab]->cama[cam]->Paciente->setFechaCirugia(fechaCirugia);
 							cout<<"------------------------------------------------------------------------"<<endl;
 							cout<<"   * Los doctores disponibles son:  "<<endl;
 							cout<<"------------------------------------------------------------------------"<<endl;
 							for(int doc1=0;doc1<10;doc1++){
-								if(cout<<doc[doc1]->getEspecialidad()==esp1){
+								if(doc[doc1]->getEspecialidad()==esp1){
 									cout<<"   * "<<cont<<"."<<doc[doc1]->getNombre()<<endl
 								}
 								cont++;
@@ -109,7 +103,7 @@ void menu(Pabellon pab[10],Doctor doc[20]) {
 							cout<<"   * Digite el numero del doctor a escojer:  "<<endl;
 							cout<<"------------------------------------------------------------------------"<<endl;
 							cin>>op1;
-							pab[pab]->cama[cam]->Paciente->setDoctor(doc[op1]);
+							p1.Paciente(cedula,nombre,apellido,direccion,patologia,tipoCirugia,1,prioridad,fechaCirugia,*cam,*doc[op1]);
 						}
 					}
 				}
@@ -119,6 +113,7 @@ void menu(Pabellon pab[10],Doctor doc[20]) {
 			
 			break;
 		case 3:
+			
 			
 			break;
 		case 4:
