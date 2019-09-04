@@ -6,8 +6,8 @@ Paciente::Paciente(string cedula, string nombre, string apellido, string direcci
 void Paciente::setCedula(string& cedula) { this->cedula(cedula); }
 void Paciente::setNombre(string& nombre) { this->nombre(nombre); }
 void Paciente::setApellido(string& apellido) { this->apellido(apellido); }
-void Paciente::setDireccion(string& direccion) { this->direccion(apellido); }
-void Paciente::setPatologia(string& patologia) { this->patologia(apellido); }
+void Paciente::setDireccion(string& direccion) { this->direccion(direccion); }
+void Paciente::setPatologia(string& patologia) { this->patologia(patologia); }
 void Paciente::setTipoCirugia(string& tipo) { tipoCirugia(tipo); }
 void Paciente::setEstado() { estado=(estado==0)?1:0; }
 void Paciente::setPrioridad(string& prioridad) { this->prioridad(prioridad); }
