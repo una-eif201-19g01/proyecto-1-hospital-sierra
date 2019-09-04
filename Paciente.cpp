@@ -2,7 +2,7 @@
 
 Paciente::Paciente() {}
 Paciente::Paciente(string cedula, string nombre, string apellido, string direccion, string patologia,
-	string tipoCirugia, string estado, string prioridad, string fecha, Camas* cama, Doctores* doctor) {}
+	string tipoCirugia, string estado, string prioridad, string fecha, Cama* cama, Doctor* doctor) {}
 void Paciente::setCedula(string& cedula) { this->cedula(cedula); }
 void Paciente::setNombre(string& nombre) { this->nombre(nombre); }
 void Paciente::setApellido(string& apellido) { this->apellido(apellido); }

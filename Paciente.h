@@ -22,7 +22,7 @@ private:
 
 public:
 	Paciente();
-	Paciente(string,string,string,string,string,string,string,string,string,Camas* ,Doctores*);
+	Paciente(string,string,string,string,string,string,string,string,string,Cama* ,Doctor*);
 	void setCedula(string& ) ;
 	void setNombre(string&  ) ;
 	void setApellido(string& ) ;
