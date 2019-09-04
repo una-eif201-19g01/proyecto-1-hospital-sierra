@@ -3,7 +3,7 @@
 #include"Pabellones.h"
 class Pabellones;
 class Cama{
-protected:
+private:
 	bool estado;//0=libre,1=ocupada
 	string numeroCama;
 	Paciente* paciente;

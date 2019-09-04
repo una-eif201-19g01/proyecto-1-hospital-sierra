@@ -7,7 +7,7 @@
 using std::string;
 //class Pabellon;
 class Paciente{
-protected:
+private:
 	string cedula;
 	string nombre;
 	string apellido;

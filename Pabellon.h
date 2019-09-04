@@ -4,7 +4,7 @@
 #include"Cama.h"
 class Cama;
 class Pabellon{
-protected:
+private:
 string sector;
 char genero;
 Cama * camas[20];
