@@ -21,4 +21,4 @@ void Pabellon::ingresarPaciente(Paciente* paciente) {
 		}
 	}
 }
-void Pabellon::liberarCama(int numero) { camas[numero]->liberarCama(); }
+void Pabellon::liberarCama(int numero) { camas[numero]->liberarCama();}
