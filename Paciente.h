@@ -13,7 +13,7 @@ private:
 	string direccion;
 	string patologia;
 	string tipoCirugia;
-	string estado;//0=de alta, 1=internado
+	int estado;//0=de alta, 1=internado
 	string prioridad;
 	string fechaCirugia;
 	Cama* cama;
@@ -21,7 +21,7 @@ private:
 
 public:
 	Paciente();
-	Paciente(string,string,string,string,string,string,string,string,string,Cama* ,Doctor*);
+	Paciente(string,string,string,string,string,string,int,string,string ,Cama* ,Doctor*);
 	void setCedula(string& ) ;
 	void setNombre(string&  ) ;
 	void setApellido(string& ) ;
@@ -39,7 +39,7 @@ public:
 	string getDireccion() ;
 	string getPatologia() ;
 	string getTipoCirugia();
-	string getEstado();
+	int getEstado();
 	string getPrioridad()  ;
 	string getFechaCirugia() ;
 	Cama  getCama() ;
