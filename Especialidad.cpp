@@ -13,4 +13,3 @@ string Especialidad:: getEspecialidades() {
 }
 
 
-}
