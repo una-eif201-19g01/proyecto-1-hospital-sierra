@@ -8,7 +8,7 @@ public:
 
 	Especialidad();
 	Especialidad(string);
-	void setEspecialidades();
+	void setEspecialidades(string);
 	string getEspecialidades();
 
 };
