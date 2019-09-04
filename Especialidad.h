@@ -10,5 +10,6 @@ public:
 	Especialidad(string);
 	void setEspecialidades();
 	string getEspecialidades();
+
 };
 #endif

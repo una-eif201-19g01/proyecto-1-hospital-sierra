@@ -11,3 +11,6 @@ void Especialidad:: setEspecialidades(string espe) {
 string Especialidad:: getEspecialidades() {
 	return especialidades;
 }
+
+
+}
