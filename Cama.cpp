@@ -6,8 +6,8 @@ Cama::Cama(int numeroCama){
 	estado = 0;
 	this->numeroCama = to_string(numeroCama);
 }
-void Cama:: setEstado(bool estado){}
-void Cama:: setPaciente(Paciente * paciente){}
+void Cama:: setEstado(bool estado){ estado(estado);}
+void Cama:: setPaciente(Paciente * paciente){ paciente(paciente);}
 void Cama:: setNumeroCama(char sector){
 	this->numeroCama = to_string(sector) + getNumeroCama();
 }
@@ -16,11 +16,11 @@ Paciente* Cama::getPaciente() { return paciente; }
 bool Cama::getEstado() { return estado; }
 void Cama::ingresarPaciente(Paciente* paciente) {
 	this->paciente(paciente);
-	estado = 1;
+	setEstado(1);
 	this->paciente->setEstado();
 }
 void Cama::liberarCama() {
-	estado = 0;
+	setEstado(0);
 	paciente->setEstado();
 	paciente = NULL;
 }
