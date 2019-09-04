@@ -31,7 +31,7 @@ public:
 	void setTipoCirugia(string& ) ;
 	void setEstado() ;
 	void setPrioridad(string& ) ;
-	void setFechaCirujia(string& ) ;
+	void setFechaCirugia(string& ) ;
 	void setCama(Cama * ) ;
 	void setDoctor(Doctor * ) ;
 	string getCedula() ;
@@ -42,7 +42,7 @@ public:
 	string getTipoCirugia();
 	string getEstado();
 	string getPrioridad()  ;
-	string getFechaCirujia() ;
+	string getFechaCirugia() ;
 	Cama  getCama() ;
 	Doctor  getDoctor() ;
 
