@@ -1,8 +1,8 @@
 #include "Paciente.h"
 
 Paciente::Paciente() {}
-Paciente::Paciente(string cedula,string genero, string nombre, string apellido, string direccion, string patologia,
-	string tipoCirugia, int estado, string prioridad, string fecha, Cama* cama, Doctor* doctor):cedula(cedula),nombre(nombre),apellido(apellido),
+Paciente::Paciente(string& cedula,string& genero, string& nombre, string& apellido, string& direccion, string& patologia,
+	string& tipoCirugia, int estado, string& prioridad, string& fecha, Cama* cama, Doctor* doctor):cedula(cedula),nombre(nombre),apellido(apellido),
 direccion(direccion),patologia(patologia),tipoCirugia(tipoCirugia),estado(estado),prioridad(prioridad),cama(cama),fechaCirugia(fecha),doctor(doctor),
 genero(genero){}
 void Paciente::setCedula(string& cedula) { this->cedula(cedula); }
