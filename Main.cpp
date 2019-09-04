@@ -14,16 +14,16 @@ int main() {
 	Doctor doctores[20];
     Pabellon pabellones[10];
 	Especialidad especialidades[10];
-	especialidades[0].setEspecialidad("Neumologia");
-	especialidades[0].setEspecialidad("Hematologia");
-	especialidades[0].setEspecialidad("Ortopedia");
-	especialidades[0].setEspecialidad("Dermatologia");
-	especialidades[0].setEspecialidad("Ginecologia");
-	especialidades[0].setEspecialidad("Urologia");
-	especialidades[0].setEspecialidad("Pediatria");
-	especialidades[0].setEspecialidad("Psiquiatria");
-	especialidades[0].setEspecialidad("Rehabilitacion");
-	especialidades[0].setEspecialidad("Nutriologia");
+	especialidades[0].setEspecialidades("Neumologia");
+	especialidades[0].setEspecialidades("Hematologia");
+	especialidades[0].setEspecialidades("Ortopedia");
+	especialidades[0].setEspecialidades("Dermatologia");
+	especialidades[0].setEspecialidades("Ginecologia");
+	especialidades[0].setEspecialidades("Urologia");
+	especialidades[0].setEspecialidades("Pediatria");
+	especialidades[0].setEspecialidades("Psiquiatria");
+	especialidades[0].setEspecialidades("Rehabilitacion");
+	especialidades[0].setEspecialidades("Nutriologia");
 	
 	menu(pabellones,doctores,especialidades,paciente1,*cama);
 	
@@ -94,8 +94,8 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 							cout<<"   * Los doctores disponibles son:  "<<endl;
 							cout<<"------------------------------------------------------------------------"<<endl;
 							for(int doc1=0;doc1<10;doc1++){
-								if(doc[doc1]->getEspecialidad()==esp1){
-									cout<<"   * "<<cont<<"."<<doc[doc1]->getNombre()<<endl
+								if(doc[doc1]->getEspecialidades()==esp1){
+									cout<<"   * "<<cont<<"."<<doc[doc1]->getNombre()<<endl;
 								}
 								cont++;
 							}
