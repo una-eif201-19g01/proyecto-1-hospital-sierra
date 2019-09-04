@@ -31,7 +31,7 @@ int main() {
 }
 
 void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama *cam) {
-	int respuesta,op1,estado;
+	int respuesta,op1,op2,estado;
 	int cont=1;
 	string esp1,cedula,nombre,apellido,direccion,patologia,tipoCirugia,prioridad,fechaCirugia;
 	bool rs1;
@@ -57,7 +57,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"   * En cual especialidad va a ingresar el paciente?:  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
 			for(int es=0;es<10;es++){
-				cout<<esp->getEspecialidades()<<endl;
+				cout<<esp[es]->getEspecialidades()<<endl;
 			}
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cin>>esp1;
@@ -113,8 +113,18 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			
 			break;
 		case 3:
-			
-			
+			cout<<"------------------------------------------------------------------------"<<endl;
+			cout<<"   * Cual especialidad desea modificar?:  "<<endl;
+			cout<<"------------------------------------------------------------------------"<<endl;
+			cont=1;
+			for(int es1=0;es1<10;es1++){
+				cout<<cont<<esp[es1]<<endl;
+				cont++;
+			}
+			cout<<"------------------------------------------------------------------------"<<endl;
+			cout<<"   * Digite el numero de la especialidad:  "<<endl;
+			cout<<"------------------------------------------------------------------------"<<endl;
+			cin>>op2;
 			break;
 		case 4:
 			
