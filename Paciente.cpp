@@ -11,7 +11,7 @@ void Paciente::setPatologia(string& patologia) { this->patologia(apellido); }
 void Paciente::setTipoCirugia(string& tipo) { tipoCirugia(tipo); }
 void Paciente::setEstado() { estado=(estado==0)?1:0; }
 void Paciente::setPrioridad(string& prioridad) { this->prioridad(prioridad); }
-void Paciente::setFechaCirujia(string& Fecha) { fechaCirugia(fecha); }
+void Paciente::setFechaCirugia(string& fecha) { fechaCirugia(fecha); }
 void Paciente::setCama(Cama* cama) { this->cama(cama); }
 void Paciente::setDoctor(Doctor* doctor) { this->doctor(doctor); }
 string Paciente::getCedula() { return cedula; }
