@@ -2,10 +2,10 @@
 #define _PACIENTE_H
 #include<iostream>
 #include<string>
-#include "Doctores.h"
-#include"Pabellones.h"
+#include "Doctor.h"
+#include"Pabellon.h"
 using std::string;
-//class Pabellones;
+//class Pabellon;
 class Paciente{
 protected:
 	string cedula;
@@ -17,8 +17,8 @@ protected:
 	string estado;//0=de alta, 1=internado
 	string prioridad;
 	string fechaCirugia;
-	Camas* cama;
-	Doctores * doctor;
+	Cama* cama;
+	Doctor * doctor;
 
 public:
 	Paciente();
@@ -32,8 +32,8 @@ public:
 	void setEstado() ;
 	void setPrioridad(string& ) ;
 	void setFechaCirujia(string& ) ;
-	void setCama(Camas * ) ;
-	void setDoctor(Doctores * ) ;
+	void setCama(Cama * ) ;
+	void setDoctor(Doctor * ) ;
 	string getCedula() ;
 	string getNombre() ;
 	string getApellido() ;
@@ -43,8 +43,8 @@ public:
 	string getEstado();
 	string getPrioridad()  ;
 	string getFechaCirujia() ;
-	Camas  getCama() ;
-	Doctores  getDoctor() ;
+	Cama  getCama() ;
+	Doctor  getDoctor() ;
 
 };
 #endif

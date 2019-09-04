@@ -1,7 +1,7 @@
-#include "Camas.h"
+#include "Cama.h"
 
-Camas:: Camas(){}
-Camas::Camas( Pabellon* pabellon, int numeroCama){
+Cama:: Cama(){}
+Cama::Cama( Pabellon* pabellon, int numeroCama){
 	paciente = NULL;
 	estado = 0;
 	numeroCama = to_string(pabellon->getSector()) + to_string(numeroCama);

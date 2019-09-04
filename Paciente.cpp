@@ -12,8 +12,8 @@ void Paciente::setTipoCirugia(string& tipo) { tipoCirugia(tipo); }
 void Paciente::setEstado() { estado=(estado==0)?1:0; }
 void Paciente::setPrioridad(string& prioridad) { this->prioridad(prioridad); }
 void Paciente::setFechaCirujia(string& Fecha) { fechaCirugia(fecha); }
-void Paciente::setCama(Camas* cama) { this->cama(cama); }
-void Paciente::setDoctor(Doctores* doctor) { this->doctor(doctor); }
+void Paciente::setCama(Cama* cama) { this->cama(cama); }
+void Paciente::setDoctor(Doctor* doctor) { this->doctor(doctor); }
 string Paciente::getCedula() { return cedula; }
 string Paciente::getNombre() { return nombre; }
 string Paciente::getApellido() { return apellido; }
@@ -23,5 +23,5 @@ string Paciente::getTipoCirugia() { return tipoCirugia; }
 string Paciente::getEstado() { return estado; }
 string Paciente::getPrioridad() { return prioridad; }
 string Paciente::getFechaCirujia() { return fechaCirugia; }
-Camas* Paciente::getCama() { return cama->getNumeroCama; }
-Doctores* Paciente::getDoctor() { return doctor->getNombreDoctor; }
+Cama* Paciente::getCama() { return cama->getNumeroCama; }
+Doctor* Paciente::getDoctor() { return doctor->getNombreDoctor; }
