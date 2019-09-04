@@ -1,13 +1,8 @@
 #include "Doctor.h"
 
-Doctor::Doctor() {
+Doctor::Doctor(){}
 
-}
-
-Doctor::Doctor(string, Especialidad *) {
-
-}
-
+Doctor::Doctor(string nombre, Especialidad * especialidad): nombre(nombre), especialidad(especialidad) {}
 void Doctor::setNombre(string& nombre) {
     this->nombre(nombre);
 }
