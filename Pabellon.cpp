@@ -4,8 +4,9 @@ Pabellon::Pabellon() {}
 Pabellon::Pabellon(char sector, char genero):genero(genero),sector(sector) {
 	Cama* cama=NULL;
 	for (int contador = 0; contador <= camas.size(); contador++) {
-		cama = cama->Cama(sector, contador);
+		cama = cama->Cama(contador);
 		camas[contador] = cama;
+		camas[contador]->setNumeroCama(getSectorPabellon());
 	}
 	delete cama;
 }
@@ -20,4 +21,4 @@ void Pabellon::ingresarPaciente(Paciente* paciente) {
 		}
 	}
 }
-void Pabellon::liberarCama(int numero) { camas[numero]->liberarCama(); }
+void Pabellon::liberarCama(int numero) { camas[numero]->liberarCama();}

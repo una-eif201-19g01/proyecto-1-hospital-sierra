@@ -1,24 +1,24 @@
 #ifndef _CAMA_H
 #define _CAMA_H
-#include"Pabellones.h"
-class Pabellones;
+#include"Pabellon.h"
+class Pabellon;
 class Cama{
-protected:
+private:
 	bool estado;//0=libre,1=ocupada
 	string numeroCama;
 	Paciente* paciente;
 	   	 
 public:
 	Cama();
-	Cama(Pabellon*, int );
+	Cama(int );
 	void setEstado(bool ) ;
 	void setPaciente(Paciente *) ;
-	void setNumeroCama(int) ;
+	void setNumeroCama(char) ;
 	string getNumeroCama();
 	Paciente* getPaciente();
 	bool getEstado();
 	void ingresarPaciente(Paciente*);
-	void liberarCama()
+	void liberarCama();
 
 };
 #endif

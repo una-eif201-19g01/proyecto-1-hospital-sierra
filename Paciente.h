@@ -5,9 +5,8 @@
 #include "Doctor.h"
 #include"Pabellon.h"
 using std::string;
-//class Pabellon;
 class Paciente{
-protected:
+private:
 	string cedula;
 	string nombre;
 	string apellido;
@@ -22,7 +21,7 @@ protected:
 
 public:
 	Paciente();
-	Paciente(string,string,string,string,string,string,string,string,string,Camas* ,Doctores*);
+	Paciente(string,string,string,string,string,string,string,string,string,Cama* ,Doctor*);
 	void setCedula(string& ) ;
 	void setNombre(string&  ) ;
 	void setApellido(string& ) ;
@@ -31,7 +30,7 @@ public:
 	void setTipoCirugia(string& ) ;
 	void setEstado() ;
 	void setPrioridad(string& ) ;
-	void setFechaCirujia(string& ) ;
+	void setFechaCirugia(string& ) ;
 	void setCama(Cama * ) ;
 	void setDoctor(Doctor * ) ;
 	string getCedula() ;
@@ -42,7 +41,7 @@ public:
 	string getTipoCirugia();
 	string getEstado();
 	string getPrioridad()  ;
-	string getFechaCirujia() ;
+	string getFechaCirugia() ;
 	Cama  getCama() ;
 	Doctor  getDoctor() ;
 

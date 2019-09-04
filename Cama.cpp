@@ -1,26 +1,26 @@
 #include "Cama.h"
 
 Cama:: Cama(){}
-Cama::Cama( Pabellon* pabellon, int numeroCama){
+Cama::Cama(int numeroCama){
 	paciente = NULL;
 	estado = 0;
-	numeroCama = to_string(pabellon->getSector()) + to_string(numeroCama);
+	this->numeroCama = to_string(numeroCama);
 }
-void Camas:: setEstado(bool estado){}
-void Camas:: setPaciente(Paciente * paciente){}
-void Camas:: setNumeroCama(int numeroCama){
-	this->numeroCama = to_string(pabellon->getSector) + to_string(numeroCama);
+void Cama:: setEstado(bool estado){ estado(estado);}
+void Cama:: setPaciente(Paciente * paciente){ paciente(paciente);}
+void Cama:: setNumeroCama(char sector){
+	this->numeroCama = to_string(sector) + getNumeroCama();
 }
-string Camas::getNumeroCama() { return numeroCama; }
-Paciente* Camas::getPaciente() { return paciente; }
-bool Camas::getEstado() { return estado; }
-void Camas::ingresarPaciente(Paciente* paciente) {
+string Cama::getNumeroCama() { return numeroCama; }
+Paciente* Cama::getPaciente() { return paciente; }
+bool Cama::getEstado() { return estado; }
+void Cama::ingresarPaciente(Paciente* paciente) {
 	this->paciente(paciente);
-	estado = 1;
+	setEstado(1);
 	this->paciente->setEstado();
 }
-void Camas::liberarCama() {
-	estado = 0;
+void Cama::liberarCama() {
+	setEstado(0);
 	paciente->setEstado();
 	paciente = NULL;
 }
