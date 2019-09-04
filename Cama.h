@@ -10,10 +10,10 @@ private:
 	   	 
 public:
 	Cama();
-	Cama(Pabellon*, int );
+	Cama(int );
 	void setEstado(bool ) ;
 	void setPaciente(Paciente *) ;
-	void setNumeroCama(int) ;
+	void setNumeroCama(char) ;
 	string getNumeroCama();
 	Paciente* getPaciente();
 	bool getEstado();
