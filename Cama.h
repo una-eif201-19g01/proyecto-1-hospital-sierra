@@ -1,7 +1,7 @@
 #ifndef _CAMA_H
 #define _CAMA_H
 #include"Pabellon.h"
-class Pabellones;
+class Pabellon;
 class Cama{
 private:
 	bool estado;//0=libre,1=ocupada
