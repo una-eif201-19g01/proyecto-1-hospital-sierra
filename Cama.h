@@ -1,7 +1,7 @@
 #ifndef _CAMA_H
 #define _CAMA_H
-#include"Pabellones.h"
-class Pabellones;
+#include"Pabellon.h"
+class Pabellon;
 class Cama{
 private:
 	bool estado;//0=libre,1=ocupada
@@ -18,7 +18,7 @@ public:
 	Paciente* getPaciente();
 	bool getEstado();
 	void ingresarPaciente(Paciente*);
-	void liberarCama()
+	void liberarCama();
 
 };
 #endif

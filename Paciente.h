@@ -5,7 +5,6 @@
 #include "Doctor.h"
 #include"Pabellon.h"
 using std::string;
-//class Pabellon;
 class Paciente{
 private:
 	string cedula;
