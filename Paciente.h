@@ -34,7 +34,7 @@ public:
 	void setFechaCirugia(string& ) ;
 	void setCama(Cama * ) ;
 	void setDoctor(Doctor * ) ;
-	void setGenero(genero&)
+	void setGenero(string&);
 	string getCedula() ;
 	string getGenero();
 	string getNombre() ;
