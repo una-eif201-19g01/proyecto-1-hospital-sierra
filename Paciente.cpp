@@ -22,6 +22,6 @@ string Paciente::getPatologia() { return patologia; }
 string Paciente::getTipoCirugia() { return tipoCirugia; }
 string Paciente::getEstado() { return estado; }
 string Paciente::getPrioridad() { return prioridad; }
-string Paciente::getFechaCirujia() { return fechaCirugia; }
+string Paciente::getFechaCirugia() { return fechaCirugia; }
 Cama* Paciente::getCama() { return cama->getNumeroCama; }
 Doctor* Paciente::getDoctor() { return doctor->getNombreDoctor; }
