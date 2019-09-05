@@ -14,16 +14,6 @@ int main() {
 	Doctor doctores[20];
     Pabellon pabellones[10];
 	Especialidad especialidades[10];
-	especialidades[0].setEspecialidades("Neumologia");
-	especialidades[0].setEspecialidades("Hematologia");
-	especialidades[0].setEspecialidades("Ortopedia");
-	especialidades[0].setEspecialidades("Dermatologia");
-	especialidades[0].setEspecialidades("Ginecologia");
-	especialidades[0].setEspecialidades("Urologia");
-	especialidades[0].setEspecialidades("Pediatria");
-	especialidades[0].setEspecialidades("Psiquiatria");
-	especialidades[0].setEspecialidades("Rehabilitacion");
-	especialidades[0].setEspecialidades("Nutriologia");
 	
 	menu(pabellones,doctores,especialidades,paciente1,*cama);
 	
@@ -31,9 +21,8 @@ int main() {
 }
 
 void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama *cam){
-	int respuesta,op1,op2,estado;
-	int cont=1;
-	string esp1,esp2,esp3,doc1,doc2,cedula,nombre,apellido,direccion,patologia,tipoCirugia,prioridad,fechaCirugia,genero;
+	int respuesta,op1,op2,op3,estado,doc1,cont;
+	string esp1,esp2,doc2,cedula,nombre,apellido,direccion,patologia,tipoCirugia,prioridad,fechaCirugia,genero;
 	bool rs1;
 	do {
 		cout<<"------------------------------------------------------------------------"<<endl;
@@ -41,7 +30,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 		cout<<"-----------------------------------------------------------------------"<<endl;
 		cout<<"   * 1. Internar un paciente "<<endl;
 		cout<<"   * 2. Ingresar especialidades "<<endl;
-		cout<<"   * 3. Modificar doctores "<<endl;
+		cout<<"   * 3. Eliminar doctores "<<endl;
 		cout<<"   * 4. Salir del sistema"<<endl;
 		cout<<"-----------------------------------------------------------------------"<<endl;
 		cout<<"   * Ingrese su seleccion: "<<endl;
@@ -92,6 +81,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 							cout<<"------------------------------------------------------------------------"<<endl;
 							cout<<"   * Los doctores disponibles son:  "<<endl;
 							cout<<"------------------------------------------------------------------------"<<endl;
+							cont=1;
 							for(int doc1=0;doc1<10;doc1++){
 								if(doc[doc1]->getEspecialidades()==esp1){
 									cout<<"   * "<<cont<<"."<<doc[doc1]->getNombre()<<endl;
@@ -122,12 +112,14 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cout<<"   * Los doctores actuales son:  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
-			for(int doc2=0;doc2<10;doc2++){
-				cout<<doc[doc2]<<endl;
+			cont=1;
+			for(int doc2=1;doc2<11;doc2++){
+				cout<<cont<<"   * "<<doc[doc2]<<endl;
 				cout<<endl;
+				cont++;
 			}
 			cout<<"------------------------------------------------------------------------"<<endl;
-			cout<<"   * Escriba el nombre del doctor a eliminar:  "<<endl;
+			cout<<"   * Escriba el numero del doctor a eliminar:  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cin>>doc1;
 			cout<<"------------------------------------------------------------------------"<<endl;
@@ -135,14 +127,20 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cin>>doc2;
 			cout<<"------------------------------------------------------------------------"<<endl;
-			cout<<"   * Escriba la especialidad del nuevo doctor:  "<<endl;
+			cout<<"   * Las especialidades disponibles son:  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
-			cin>>esp3;
-			for(doc2=0;doc2<10;doc2++){
-				if(doc[doc2]->getNombre()==doc1){
-					doc[doc2]->setNombre(doc1);
-					doc[doc2]->setEspecialidades(esp3);
-				}
+			cont=1;
+			for(int es1=1;es1<11;es1++){
+				cout<<cont2<<"   * "<<esp[es1]<<endl;
+				cout<<endl;
+				cont++;
+			}
+			cout<<"------------------------------------------------------------------------"<<endl;
+			cout<<"   * Ingrese el numero de la especialidad:  "<<endl;
+			cout<<"------------------------------------------------------------------------"<<endl;
+			cin>>op3;
+			doc[doc1]->setNombre(doc2);
+			doc[doc1]->setEspecialidad(*esp[op3]);
 			}
 			break;
 		default:
