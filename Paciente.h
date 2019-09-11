@@ -47,6 +47,7 @@ public:
 	string getFechaCirugia() ;
 	Cama  getCama() ;
 	Doctor  getDoctor() ;
+	void imprimePaciente();
 
 };
 #endif
