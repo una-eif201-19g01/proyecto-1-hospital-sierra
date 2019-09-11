@@ -13,5 +13,6 @@ public:
     void setNombre(string&);
     string getNombre();
     void setEspecialidad(Especialidad *);
+	void imprimeDoctor();
 };
 #endif
