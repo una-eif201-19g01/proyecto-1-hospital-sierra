@@ -15,7 +15,7 @@ void Doctor::setEspecialidad(Especialidad * especialidad) {
     this->especialidad(especialidad);
 }
 
-void Doctor::imprimeDoctor() {
+std::string Doctor::imprimeDoctor() {
 	std::string reporte;
 	reporte += "Nombre del Doctor: " + getNombre() + "\nEspecialidad: " + std::to_string(getEspecialidad());
 	return reporte;

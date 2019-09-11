@@ -30,7 +30,7 @@ string Paciente::getFechaCirugia() { return fechaCirugia; }
 Cama* Paciente::getCama() { return cama->getNumeroCama; }
 Doctor* Paciente::getDoctor() { return doctor->getNombre; }
 
-void Paciente::imprimePaciente() {
+std::string Paciente::imprimePaciente() {
 	std::string reporte;
 	reporte += "Nombre: " + getNombre() + "\nApellido: " + getApellido() + "\nCedula: " + getCedula() +
 		"\nGenero:" + getGenero() + "\nDireccion: " + getDireccion() + "\nPatologia: " + getPatologia() +
