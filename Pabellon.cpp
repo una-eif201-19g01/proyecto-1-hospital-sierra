@@ -29,7 +29,7 @@ std::string Pabellon:: imprimePabellon() {
 		"\nGenero de Pabellon: " + std::to_string(getGeneroPabellon()) +
 		"\nCamas\t";
 	for (int recorrido = 0; recorrido <= camas.size(); recorrido++) {
-		reporte += (camas[recorrido].getEstado == 0) ? "[]" : "[X]";
+		reporte += (camas[recorrido].getEstado == 0) ? "[_]" : "[X]";
 	}
 	return reporte;
 }
