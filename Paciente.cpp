@@ -35,7 +35,7 @@ std::string Paciente::imprimePaciente() {
 	reporte += "Nombre: " + getNombre() + "\nApellido: " + getApellido() + "\nCedula: " + getCedula() +
 		"\nGenero:" + getGenero() + "\nDireccion: " + getDireccion() + "\nPatologia: " + getPatologia() +
 		"\nTipo de Cirugia: " + getTipoCirugia() + "\nEstado: " + std::to_string(getEstado()) +
-		"\nPrioridad: " + getPrioridad() + "\nFechaCirugia: " + getFechacirugia + "\nNumero Cama: " +
+		"\nPrioridad: " + getPrioridad() + "\nFechaCirugia: " + getFechaCirugia() + "\nNumero Cama: " +
 		std::to_string(getCama()) + "\nDoctor: " + getDoctor();
 	return reporte;	
 }
