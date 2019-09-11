@@ -32,5 +32,9 @@ Doctor* Paciente::getDoctor() { return doctor->getNombre; }
 
 void Paciente::imprimePaciente() {
 	std::string reporte;
-
+	reporte+="Nombre: "+getNombre()+"\nApellido: "+getApellido()+"\nCedula: "+getCedula()+
+		"\nGenero:"+getGenero()+"\nDireccion: "+getDireccion()+"\nPatologia: "+getPatologia()+
+		"\nTipo de Cirugia: "+getTipoCirugia()+"\nEstado: "+std::to_string(getEstado())+
+		"\nPrioridad: "+getPrioridad()+"\nFechaCirugia: "+getFechacirugia+
+		
 }
