@@ -56,7 +56,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			if(rs1==true){
 				for(int pab1=0;pab1<10;pab1++){
 					for(int cam1=0;cam1<10;cam1++){
-						if(pab[pab1]->Cama[cam1]->getEstado()==0){
+						if(pab[pab1]->cam[cam1]->getEstado()==0){
 							cam=cam[cam1];
 							cout<<"------------------------------------------------------------------------"<<endl;
 							cout<<"   * Ingrese los datos del paciente:  "<<endl;
