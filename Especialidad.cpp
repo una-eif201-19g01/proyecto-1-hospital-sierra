@@ -13,3 +13,9 @@ string Especialidad:: getEspecialidades() {
 }
 
 
+void Especialidad::imprimeEspecialidad() {
+	std::string reporte;
+	reporte += "Especialidad del Doctor: " + getEspecialidades();
+	return reporte;
+}
+
