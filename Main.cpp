@@ -126,7 +126,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 				cout<<"------------------------------------------------------------------------"<<endl;
 				cont=1;
 				for(int es1=1;es1<11;es1++){
-					cout<<cont2<<"   * "<<esp[es1]<<endl;
+					cout<<cont<<"   * "<<esp[es1]<<endl;
 					cout<<endl;
 					cont++;
 				}
@@ -162,7 +162,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cont=1;
 			for(int es1=1;es1<11;es1++){
-				cout<<cont2<<"   * "<<esp[es1]<<endl;
+				cout<<cont<<"   * "<<esp[es1]<<endl;
 				cout<<endl;
 				cont++;
 			}
