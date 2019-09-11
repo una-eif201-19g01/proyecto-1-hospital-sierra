@@ -20,6 +20,7 @@ public:
 	void setSectorPabellon(char&);
 	void ingresarPaciente(Paciente*);
 	void liberarCama(int);
+	string imprimePabellon();
 
 };
 #endif
