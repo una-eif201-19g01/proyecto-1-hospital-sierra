@@ -23,9 +23,13 @@ void Pabellon::ingresarPaciente(Paciente* paciente) {
 }
 void Pabellon::liberarCama(int numero) { camas[numero]->liberarCama();}
 
-std::string imprimePabellon() {
+std::string Pabellon:: imprimePabellon() {
 	std::string reporte;
 	reporte += "Sector de Pabellon: " + std::to_string(getSectorPabellon()) +
-		"\nGenero de Pabellon: " + std::to_string(getGeneroPabellon());
+		"\nGenero de Pabellon: " + std::to_string(getGeneroPabellon()) +
+		"\nCamas\t";
+	for (int recorrido = 0; recorrido <= camas.size(); recorrido++) {
+		reporte += (camas[recorrido].getEstado == 0) ? "[]" : "[X]";
+	}
 	return reporte;
 }
