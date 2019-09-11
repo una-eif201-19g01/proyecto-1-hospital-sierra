@@ -50,7 +50,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cin>>esp1;
 			for(int fil=0;fil<10;fil++){
-				if(esp1==especialidades[fil])
+				if(esp1==esp[fil])
 					rs1=true;
 			}
 			if(rs1==true){
