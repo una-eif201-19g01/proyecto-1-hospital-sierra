@@ -20,6 +20,6 @@ Especialidad* Doctor::getEspecialidad() {
 
 std::string Doctor::imprimeDoctor() {
 	std::string reporte;
-	reporte += "Nombre del Doctor: " + getNombre() + "\nEspecialidad: " + std::to_string(getEspecialidades());
+	reporte += "Nombre del Doctor: " + getNombre() + "\nEspecialidad: " + std::to_string(getEspecialidad());
 	return reporte;
 }
