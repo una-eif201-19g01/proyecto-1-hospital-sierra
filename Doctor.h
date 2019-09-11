@@ -14,5 +14,6 @@ public:
     string getNombre();
     void setEspecialidad(Especialidad *);
 	string imprimeDoctor();
+	Especialidad getEspecialidad();
 };
 #endif
