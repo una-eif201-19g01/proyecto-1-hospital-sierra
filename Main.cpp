@@ -56,8 +56,8 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			if(rs1==true){
 				for(int pab1=0;pab1<10;pab1++){
 					for(int cam1=0;cam1<10;cam1++){
-						if(pab[pab]->Cama[cam1]->getEstado()==0){
-							cam=cama[cam1];
+						if(pab[pab1]->cam[cam1]->getEstado()==0){
+							cam=cam[cam1];
 							cout<<"------------------------------------------------------------------------"<<endl;
 							cout<<"   * Ingrese los datos del paciente:  "<<endl;
 							cout<<"------------------------------------------------------------------------"<<endl;
@@ -84,7 +84,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 							cout<<"------------------------------------------------------------------------"<<endl;
 							cont=1;
 							for(int doc1=0;doc1<10;doc1++){
-								if(doc[doc1]->getEspecialidades()==esp1){
+								if(doc[doc1]->getEspecialidad()==esp1){
 									cout<<"   * "<<cont<<"."<<doc[doc1]->getNombre()<<endl;
 								}
 								cont++;
@@ -126,7 +126,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 				cout<<"------------------------------------------------------------------------"<<endl;
 				cont=1;
 				for(int es1=1;es1<11;es1++){
-					cout<<cont2<<"   * "<<esp[es1]<<endl;
+					cout<<cont<<"   * "<<esp[es1]<<endl;
 					cout<<endl;
 					cont++;
 				}
@@ -162,7 +162,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cont=1;
 			for(int es1=1;es1<11;es1++){
-				cout<<cont2<<"   * "<<esp[es1]<<endl;
+				cout<<cont<<"   * "<<esp[es1]<<endl;
 				cout<<endl;
 				cont++;
 			}
