@@ -1,10 +1,10 @@
 #include "Doctor.h"
 
-Doctor::Doctor() : nombre(""), especialidad(NULL){
+Doctor::Doctor() : nombre(""), especialidad(NULL),tamanno(tamanno){
     
     cantidad = 0;
     Paciente ** listaPaciente = new Paciente *[0];
-    for (int fila = 0; fila < Paciente.size(); fila++) {
+    for (int fila = 0; fila < tamanno; fila++) {
         Paciente[fila] = NULL;
     }
 }
@@ -12,7 +12,7 @@ Doctor::Doctor() : nombre(""), especialidad(NULL){
 Doctor::Doctor(string nombre, Especialidad * especialidad, int tamanno) : nombre(nombre), especialidad(especialidad), tamanno(tamanno) {
     cantidad = 0;
     Paciente ** listaPaciente = new Paciente *[tamanno];
-    for (int fila = 0; fila < Paciente.size(); fila++) {
+    for (int fila = 0; fila < tamanno; fila++) {
         Paciente[fila] = NULL;
     }
 }
