@@ -14,7 +14,7 @@ string Doctor::getNombre() {
 void Doctor::setEspecialidad(Especialidad * especialidad) {
     this->especialidad(especialidad);
 }
-Especialidad* Doctor::getEspecialidad() {
+std::string Doctor::getEspecialidad() {
 	return especialidad->getEspecialidades;
 }
 

@@ -4,18 +4,18 @@ Especialidad::Especialidad(string especial) {
 	especialidades = especial;
 }
 
-void Especialidad:: setEspecialidades(string espe) {
+void Especialidad:: setEspecialidad(string espe) {
 	especialidades = espe;
 }
 
-string Especialidad:: getEspecialidades() {
-	return especialidades;
+string Especialidad:: getEspecialidad() {
+	return especialidad;
 }
 
 
-std::string Especialidad::imprimeEspecialidades() {
+std::string Especialidad::imprimeEspecialidad() {
 	std::string reporte;
-	reporte += "Especialidad:" + getEspecialidades();
+	reporte += "Especialidad:" + getEspecialidad();
 	return reporte;
 }
 

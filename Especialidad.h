@@ -8,9 +8,9 @@ public:
 
 	Especialidad();
 	Especialidad(string);
-	void setEspecialidades(string);
-	string getEspecialidades();
-	string imprimeEspecialidades();
+	void setEspecialidad(string);
+	string getEspecialidad();
+	string imprimeEspecialidad();
 
 };
 #endif
