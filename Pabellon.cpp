@@ -2,10 +2,10 @@
 
 Pabellon::Pabellon() {}
 
-Pabellon::Pabellon(char sector, char genero,int tamanno) : genero(genero), sector(sector),tamanno(tamanno) {
+Pabellon::Pabellon(char sector, char genero,int tamannoPabellon) : genero(genero), sector(sector),tamannoPabellon(tamannoPabellon) {
     cantidad = 0;
     Cama* cama = NULL;
-    for (int contador = 0; contador <= tamanno; contador++) {
+    for (int contador = 0; contador <= tamannoPabellon; contador++) {
         cama = cama->Cama(contador);
         camas[contador] = cama;
         camas[contador]->setNumeroCama(getSectorPabellon());
@@ -45,7 +45,7 @@ string Pabellon::imprimePabellon() {
     reporte += "Sector de Pabellon: " + std::to_string(getSectorPabellon()) +
             "\nGenero de Pabellon: " + std::to_string(getGeneroPabellon()) +
             "\nCamas\t";
-    for (int recorrido = 0; recorrido <= tamanno; recorrido++) {
+    for (int recorrido = 0; recorrido <= tamannoPabellon; recorrido++) {
         reporte += (camas[recorrido].getEstado == 0) ? "[_]" : "[X]";
     }
     return reporte;
