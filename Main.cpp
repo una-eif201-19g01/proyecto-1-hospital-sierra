@@ -45,7 +45,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"   * En cual especialidad va a ingresar el paciente?:  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
 			for(int es=0;es<10;es++){
-				cout<<esp[es]->getEspecialidades()<<endl;
+				cout<<esp[es]->getEspecialidad()<<endl;
 			}
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cin>>esp1;
@@ -54,49 +54,48 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 					rs1=true;
 			}
 			if(rs1==true){
-				for(int pab1=0;pab1<10;pab1++){
-					for(int cam1=0;cam1<10;cam1++){
-						if(pab[pab1]->cam[cam1]->getEstado()==0){
-							cam=cam[cam1];
-							cout<<"------------------------------------------------------------------------"<<endl;
-							cout<<"   * Ingrese los datos del paciente:  "<<endl;
-							cout<<"------------------------------------------------------------------------"<<endl;
-							cout<<"   * Cedula:"<<endl;
-							cin>>cedula;
-							cout<<"   * Nombre:"<<endl;
-							cin>>nombre;
-							cout<<"   * Apellido:"<<endl;
-							cin>>apellido;
-							cout<<"   * Genero:"<<endl;
-							cin>>genero;
-							cout<<"   * Direccion:"<<endl;
-							cin>>direccion;
-							cout<<"   * Patologia:"<<endl;
-							cin>>patologia;
-							cout<<"   * Tipo de cirugia:"<<endl;
-							cin>>tipoCirugia;
-							cout<<"   * Prioridad:"<<endl;
-							cin>>prioridad;
-							cout<<"   * Fecha de la cirugia:"<<endl;
-							cin>>fechaCirugia;
-							cout<<"------------------------------------------------------------------------"<<endl;
-							cout<<"   * Los doctores disponibles son:  "<<endl;
-							cout<<"------------------------------------------------------------------------"<<endl;
-							cont=1;
-							for(int doc1=0;doc1<10;doc1++){
-								if(doc[doc1]->getEspecialidad()==esp1){
-									cout<<"   * "<<cont<<"."<<doc[doc1]->getNombre()<<endl;
-								}
-								cont++;
-							}
-							cout<<"------------------------------------------------------------------------"<<endl;
-							cout<<"   * Digite el numero del doctor a escojer:  "<<endl;
-							cout<<"------------------------------------------------------------------------"<<endl;
-							cin>>op1;
-							p1.Paciente(cedula,nombre,apellido,direccion,patologia,tipoCirugia,1,prioridad,fechaCirugia,*cam,*doc[op1],genero);
-						}
+				cam=cam[cam1];
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Ingrese los datos del paciente:  "<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Cedula:"<<endl;
+				cin>>cedula;
+				cout<<"   * Nombre:"<<endl;
+				cin>>nombre;
+				cout<<"   * Apellido:"<<endl;
+				cin>>apellido;
+				cout<<"   * Genero:"<<endl;
+				cin>>genero;
+				cout<<"   * Direccion:"<<endl;
+				cin>>direccion;
+				cout<<"   * Patologia:"<<endl;
+				cin>>patologia;
+				cout<<"   * Tipo de cirugia:"<<endl;
+				cin>>tipoCirugia;
+				cout<<"   * Prioridad:"<<endl;
+				cin>>prioridad;
+				cout<<"   * Fecha de la cirugia:"<<endl;
+				cin>>fechaCirugia;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Los doctores disponibles son:  "<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cont=1;
+				for(int doc1=0;doc1<10;doc1++){
+					if(doc[doc1]->getEspecialidad()==esp1){
+						cout<<"   * "<<cont<<"."<<doc[doc1]->getNombre()<<endl;
 					}
+					cont++;
 				}
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Digite el numero del doctor a escojer:  "<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cin>>op1;
+				p1.Paciente(cedula,nombre,apellido,direccion,patologia,tipoCirugia,1,prioridad,fechaCirugia,*cam,*doc[op1],genero);
+				for(int pab1=0;pab1<10;pab1++){
+					if(p1.getGenero()=pab[pab1]->getGeneroPabellon())
+						pab[pab1]->ingresarPaciente(p1);
+					    pab1=10;			
+				}	
 			}
 			break;
 		case 2:
