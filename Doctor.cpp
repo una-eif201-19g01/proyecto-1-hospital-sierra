@@ -1,18 +1,18 @@
 #include "Doctor.h"
 
-Doctor::Doctor() : nombre(""), especialidad(NULL),tamanno(tamanno){
+Doctor::Doctor() : nombre(""), especialidad(NULL), tamannoDoctor(tamannoDoctor){
     
     cantidad = 0;
     Paciente ** listaPaciente = new Paciente *[0];
-    for (int fila = 0; fila < tamanno; fila++) {
+    for (int fila = 0; fila < tamannoDoctor; fila++) {
         Paciente[fila] = NULL;
     }
 }
 
-Doctor::Doctor(string nombre, Especialidad * especialidad, int tamanno) : nombre(nombre), especialidad(especialidad), tamanno(tamanno) {
+Doctor::Doctor(string nombre, Especialidad * especialidad, int tamanno) : nombre(nombre), especialidad(especialidad), tamannoDoctor(tamannoDoctor){
     cantidad = 0;
-    Paciente ** listaPaciente = new Paciente *[tamanno];
-    for (int fila = 0; fila < tamanno; fila++) {
+    Paciente ** listaPaciente = new Paciente *[tamannoDoctor];
+    for (int fila = 0; fila < tamannoDoctor; fila++) {
         Paciente[fila] = NULL;
     }
 }
