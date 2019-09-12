@@ -9,7 +9,7 @@ private:
     Especialidad * especialidad;
     Paciente** listaPaciente;
     int cantidad;
-    int tamanno;
+    int tamannoDoctor;
 public:
     Doctor();
     Doctor(string, Especialidad *, int);
