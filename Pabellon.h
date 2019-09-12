@@ -9,7 +9,7 @@ private:
 int cantidad;
 string sector;
 char genero;
-int tamanno;
+int tamannoPabellon;
 Cama * camas[20];
 
 public:
