@@ -10,6 +10,7 @@ public:
 	Especialidad(string);
 	void setEspecialidades(string);
 	string getEspecialidades();
+	string imprimeEspecialidades();
 
 };
 #endif

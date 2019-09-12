@@ -13,4 +13,10 @@ string Especialidad:: getEspecialidades() {
 }
 
 
+std::string Especialidad::imprimeEspecialidades() {
+	std::string reporte;
+	reporte += "Especialidad:" + getEspecialidades();
+	return reporte;
+}
+
 
