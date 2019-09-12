@@ -45,7 +45,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"   * En cual especialidad va a ingresar el paciente?:  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
 			for(int es=0;es<10;es++){
-				cout<<esp[es]->getEspecialidades()<<endl;
+				cout<<esp[es]->getEspecialidad()<<endl;
 			}
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cin>>esp1;
