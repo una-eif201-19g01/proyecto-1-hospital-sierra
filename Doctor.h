@@ -3,7 +3,6 @@
 #define _DOCTOR_H
 #include "Especialidad.h"
 #include "Paciente.h"
-class Paciente;
 class Doctor {
 private:
     string nombre;
