@@ -4,12 +4,12 @@
 #include"Cama.h"
 class Cama;
 class Pabellon{
+    
 private:
+int cantidad;
 string sector;
 char genero;
 Cama * camas[20];
-
-private:
 
 public:
 	Pabellon();
@@ -20,7 +20,7 @@ public:
 	void setSectorPabellon(char&);
 	void ingresarPaciente(Paciente*);
 	void liberarCama(int);
-	string imprimePabellon();
+	std::string imprimePabellon();
 
 };
 #endif
