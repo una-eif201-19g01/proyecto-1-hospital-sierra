@@ -1,11 +1,11 @@
 #include "Especialidad.h"
 Especialidad::Especialidad() {};
 Especialidad::Especialidad(string especial) {
-	especialidades = especial;
+	especialidad = especial;
 }
 
 void Especialidad:: setEspecialidad(string espe) {
-	especialidades = espe;
+	especialidad = espe;
 }
 
 string Especialidad:: getEspecialidad() {

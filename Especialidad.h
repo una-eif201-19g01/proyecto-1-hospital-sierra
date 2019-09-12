@@ -3,7 +3,7 @@
 using std::string;
 class Especialidad{
 private:
-	string especialidades;
+	string especialidad;
 public:
 
 	Especialidad();
