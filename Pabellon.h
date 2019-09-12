@@ -20,7 +20,7 @@ public:
 	void setSectorPabellon(char&);
 	void ingresarPaciente(Paciente*);
 	void liberarCama(int);
-	std::string imprimePabellon();
+	string imprimePabellon();
 
 };
 #endif
