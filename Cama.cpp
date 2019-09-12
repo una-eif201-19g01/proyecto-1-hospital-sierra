@@ -23,4 +23,5 @@ void Cama::liberarCama() {
 	setEstado(0);
 	paciente->setEstado();
 	paciente = NULL;
+        
 }
