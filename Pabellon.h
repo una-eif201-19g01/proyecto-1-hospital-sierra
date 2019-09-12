@@ -9,11 +9,12 @@ private:
 int cantidad;
 string sector;
 char genero;
+int tamanno;
 Cama * camas[20];
 
 public:
 	Pabellon();
-	Pabellon(char,char);
+	Pabellon(char,char,int);
 	char getSectorPabellon();
 	char getGeneroPabellon();
 	void setGeneroPabellon(char&);
