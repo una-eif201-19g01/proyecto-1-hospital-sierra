@@ -9,9 +9,10 @@ private:
     Especialidad * especialidad;
     Paciente** listaPaciente;
     int cantidad;
+    int tamanno;
 public:
     Doctor();
-    Doctor(string, Especialidad *);
+    Doctor(string, Especialidad *, int);
     void setNombre(string&);
     string getNombre();
     void setEspecialidad(Especialidad *);
