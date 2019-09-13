@@ -94,7 +94,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1, C
 				cout << "   * Digite el numero del doctor a escojer:  " << endl;
 				cout << "------------------------------------------------------------------------" << endl;
 				cin >> op1;
-				p1.Paciente(cedula, nombre, apellido, direccion, patologia, tipoCirugia, 1, prioridad, fechaCirugia, *cam, *doc[op1 - 1], genero);
+				Paciente p1(cedula, genero, nombre, apellido, direccion, patologia, tipoCirugia, 1, prioridad, fechaCirugia, &cam, &doc[op1 - 1]);
 				for (int pab1 = 0; pab1 < 10; pab1++) {
 					if (p1.getGenero() = pab[pab1].getGeneroPabellon())
 						pab[pab1].ingresarPaciente(&p1);
@@ -190,7 +190,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1, C
 				cout << "   * Ingrese el genero designado en el pabellon:  " << endl;
 				cout << "------------------------------------------------------------------------" << endl;
 				cin >> genero1;
-				pab[pab2].Pabellon(sector1, genero1, 10);
+				pab[pab2] = Pabellon(sector1, genero1, 10);
 			}
 			break;
 		case 6:
