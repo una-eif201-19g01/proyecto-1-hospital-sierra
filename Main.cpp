@@ -23,6 +23,7 @@ int main() {
 void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama *cam){
 	int respuesta,op1,op2,op3,op4,estado,doc1,cont;
 	string esp1,esp2,doc2,doc3,cedula,nombre,apellido,direccion,patologia,tipoCirugia,prioridad,fechaCirugia,genero;
+	char sector1, genero1;
 	bool rs1;
 	do {
 		cout<<"------------------------------------------------------------------------"<<endl;
@@ -32,7 +33,11 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 		cout<<"   * 2. Ingresar especialidades "<<endl;
 		cout<<"   * 3. Ingresar doctores "<<endl;
 		cout<<"   * 4. Eliminar doctores "<<endl;
-		cout<<"   * 5. Salir del sistema"<<endl;
+		cout<<"   * 5. Ingresar pabellones"<<endl;
+		cout<<"   * 6. Mostrar pabellones"<<endl;
+		cout<<"   * 7. Mostrar doctores "<<endl;
+		cout<<"   * 8. Mostrar especialidades "<<endl;
+		cout<<"   * 9. Salir del sistema"<<endl;
 		cout<<"-----------------------------------------------------------------------"<<endl;
 		cout<<"   * Ingrese su seleccion: "<<endl;
 		cout<<"-----------------------------------------------------------------------"<<endl;
@@ -54,7 +59,6 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 					rs1=true;
 			}
 			if(rs1==true){
-				cam=cam[cam1];
 				cout<<"------------------------------------------------------------------------"<<endl;
 				cout<<"   * Ingrese los datos del paciente:  "<<endl;
 				cout<<"------------------------------------------------------------------------"<<endl;
@@ -80,7 +84,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 				cout<<"   * Los doctores disponibles son:  "<<endl;
 				cout<<"------------------------------------------------------------------------"<<endl;
 				cont=1;
-				for(int doc1=0;doc1<10;doc1++){
+				for(int doc1=0;doc1<20;doc1++){
 					if(doc[doc1]->getEspecialidad()==esp1){
 						cout<<"   * "<<cont<<"."<<doc[doc1]->getNombre()<<endl;
 					}
@@ -90,7 +94,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 				cout<<"   * Digite el numero del doctor a escojer:  "<<endl;
 				cout<<"------------------------------------------------------------------------"<<endl;
 				cin>>op1;
-				p1.Paciente(cedula,nombre,apellido,direccion,patologia,tipoCirugia,1,prioridad,fechaCirugia,*cam,*doc[op1],genero);
+				p1.Paciente(cedula,nombre,apellido,direccion,patologia,tipoCirugia,1,prioridad,fechaCirugia,*cam,*doc[op1-1],genero);
 				for(int pab1=0;pab1<10;pab1++){
 					if(p1.getGenero()=pab[pab1]->getGeneroPabellon())
 						pab[pab1]->ingresarPaciente(p1);
@@ -115,7 +119,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cout<<"   * Bienvenido al sistema para ingresar doctores *  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
-			for(int do2=1;do2<11;do2++){
+			for(int do2=1;do2<20;do2++){
 				cout<<"------------------------------------------------------------------------"<<endl;
 				cout<<"   * Ingrese el nombre del doctor:  "<<endl;
 				cout<<"------------------------------------------------------------------------"<<endl;
@@ -124,7 +128,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 				cout<<"   * Las especialidades disponibles son:  "<<endl;
 				cout<<"------------------------------------------------------------------------"<<endl;
 				cont=1;
-				for(int es1=1;es1<11;es1++){
+				for(int es1=0;es1<10;es1++){
 					cout<<cont<<"   * "<<esp[es1]<<endl;
 					cout<<endl;
 					cont++;
@@ -134,7 +138,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 				cout<<"------------------------------------------------------------------------"<<endl;
 				cin>>op4;
 				doc[do2]->setNombre(doc3);
-				doc[do2]->setEspecialidad(*esp[op4]);
+				doc[do2]->setEspecialidad(*esp[op4-1]);
 			}
 			
 			break;
@@ -143,7 +147,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"   * Los doctores actuales son:  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cont=1;
-			for(int do1=1;do1<11;do1++){
+			for(int do1=0;do1<20;do1++){
 				cout<<cont<<"   * "<<doc[do1]<<endl;
 				cout<<endl;
 				cont++;
@@ -160,7 +164,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"   * Las especialidades disponibles son:  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cont=1;
-			for(int es1=1;es1<11;es1++){
+			for(int es1=0;es1<10;es1++){
 				cout<<cont<<"   * "<<esp[es1]<<endl;
 				cout<<endl;
 				cont++;
@@ -169,9 +173,43 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"   * Ingrese el numero de la especialidad:  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cin>>op3;
-			doc[doc1]->setNombre(doc2);
-			doc[doc1]->setEspecialidad(*esp[op3]);
+			doc[doc1-1]->setNombre(doc2);
+			doc[doc1-1]->setEspecialidad(*esp[op3]);
 			
+			break;
+		case 5:
+			cout<<"------------------------------------------------------------------------"<<endl;
+			cout<<"   * Bienvenido al sistema para ingresar los pabellones *  "<<endl;
+			cout<<"------------------------------------------------------------------------"<<endl;
+			for(int pab2=0;pab2<10;pab2++){
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Ingrese el sector del pabellon:  "<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cin>>sector1;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Ingrese el genero designado en el pabellon:  "<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cin>>genero1;
+				pab[pab2]->Pabellon(sector1, genero1, 10);
+			}
+			break;
+		case 6:
+			cout<<"   * Los pabellones son: "<<endl;
+			for(int pab3=0;pab3<10;pab3++){
+				pab[pab3]->imprimePabellon();
+			}
+			break;
+		case 7:
+			cout<<"   * Los Doctores son: "<<endl;
+			for(int doc4=0;doc4<20;doc4++){
+				doc[doc4]->imprimeDoctor();
+			}
+			break;	
+		case 8:
+			cout<<"   * Las especialidades son: "<<endl;
+			for(int esp3=0;esp3<10;esp3++){
+				esp[esp3]->imprimeEspecialidad();
+			}
 			break;
 		default:
 			cout<<"-----------------------------------------------------------------------------"<<endl;
@@ -180,5 +218,5 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1,Cama 
 			cout<<"-----------------------------------------------------------------------------"<<endl;
 			cout<<endl;
 		}
-	} while (respuesta != 5);
+	} while (respuesta != 9);
 }
