@@ -96,7 +96,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1, C
 				cin >> op1;
 				Paciente p1(cedula, genero, nombre, apellido, direccion, patologia, tipoCirugia, 1, prioridad, fechaCirugia, NULL, &doc[op1 - 1]);
 				for (int pab1 = 0; pab1 < 10; pab1++) {
-					if (p1.getGenero() = pab[pab1].getGeneroPabellon())
+					if (p1.getGenero() == pab[pab1].getGeneroPabellon())
 						pab[pab1].ingresarPaciente(&p1);
 					pab1 = 10;
 				}
