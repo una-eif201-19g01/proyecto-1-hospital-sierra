@@ -5,7 +5,9 @@
 #include "Doctor.h"
 #include"Pabellon.h"
 using std::string;
-class Paciente{
+class Cama;
+class Doctor;
+class Paciente {
 private:
 	string cedula;
 	string nombre;
@@ -18,35 +20,35 @@ private:
 	string prioridad;
 	string fechaCirugia;
 	Cama* cama;
-	Doctor * doctor;
+	Doctor* doctor;
 
 public:
 	Paciente();
-	Paciente(string&,string&,string&,string&,string&,string&,string&,int,string&,string& ,Cama* ,Doctor*);
-	void setCedula(string& ) ;
-	void setNombre(string&  ) ;
-	void setApellido(string& ) ;
-	void setDireccion(string& ) ;
-	void setPatologia(string&  ) ;
-	void setTipoCirugia(string& ) ;
-	void setEstado() ;
-	void setPrioridad(string& ) ;
-	void setFechaCirugia(string& ) ;
-	void setCama(Cama * ) ;
-	void setDoctor(Doctor * ) ;
+	Paciente(string&, string&, string&, string&, string&, string&, string&, int, string&, string&, Cama*, Doctor*);
+	void setCedula(string&);
+	void setNombre(string&);
+	void setApellido(string&);
+	void setDireccion(string&);
+	void setPatologia(string&);
+	void setTipoCirugia(string&);
+	void setEstado();
+	void setPrioridad(string&);
+	void setFechaCirugia(string&);
+	void setCama(Cama*);
+	void setDoctor(Doctor*);
 	void setGenero(string&);
-	string getCedula() ;
+	string getCedula();
 	string getGenero();
-	string getNombre() ;
-	string getApellido() ;
-	string getDireccion() ;
-	string getPatologia() ;
+	string getNombre();
+	string getApellido();
+	string getDireccion();
+	string getPatologia();
 	string getTipoCirugia();
 	int getEstado();
-	string getPrioridad()  ;
-	string getFechaCirugia() ;
-	Cama  getCama() ;
-	Doctor  getDoctor() ;
+	string getPrioridad();
+	string getFechaCirugia();
+	string  getCama();
+	string getDoctor();
 	string imprimePaciente();
 
 };
