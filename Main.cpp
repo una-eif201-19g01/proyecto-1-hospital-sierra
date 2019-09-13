@@ -15,7 +15,7 @@ int main() {
 	Pabellon pabellones[10];
 	Especialidad especialidades[10];
 
-	menu(pabellones, doctores, especialidades, paciente1, *cama);
+	menu(pabellones, doctores, especialidades, paciente1, cama);
 
 	return 0;
 }
@@ -55,7 +55,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1, C
 			cout << "------------------------------------------------------------------------" << endl;
 			cin >> esp1;
 			for (int fil = 0; fil < 10; fil++) {
-				if (esp1 == esp[fil])
+				if (esp1 == esp[fil].getEspecialidad())
 					rs1 = true;
 			}
 			if (rs1 == true) {
@@ -97,7 +97,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1, C
 				p1.Paciente(cedula, nombre, apellido, direccion, patologia, tipoCirugia, 1, prioridad, fechaCirugia, *cam, *doc[op1 - 1], genero);
 				for (int pab1 = 0; pab1 < 10; pab1++) {
 					if (p1.getGenero() = pab[pab1].getGeneroPabellon())
-						pab[pab1].ingresarPaciente(p1);
+						pab[pab1].ingresarPaciente(&p1);
 					pab1 = 10;
 				}
 			}
@@ -220,4 +220,3 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1, C
 		}
 	} while (respuesta != 9);
 }
-
