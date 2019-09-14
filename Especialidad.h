@@ -9,6 +9,7 @@ public:
 
 	Especialidad();
 	Especialidad(string);
+        ~Especialidad();
 	void setEspecialidad(string);
 	string getEspecialidad();
 	string imprimeEspecialidad();
