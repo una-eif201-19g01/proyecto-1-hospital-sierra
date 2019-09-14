@@ -12,6 +12,7 @@ private:
 public:
 	Cama();
 	Cama(int);
+        ~Cama();
 	void setEstado(int);
 	void setPaciente(Paciente*);
 	void setNumeroCama(char);
