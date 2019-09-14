@@ -14,6 +14,7 @@ private:
 public:
 	Doctor();
 	Doctor(string, Especialidad*, int);
+        ~Doctor();
 	void setNombre(string&);
 	string getNombre();
 	void setEspecialidad(Especialidad*);
