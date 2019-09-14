@@ -25,6 +25,7 @@ private:
 public:
 	Paciente();
 	Paciente(string&, string&, string&, string&, string&, string&, string&, int, string&, string&, Doctor*);
+        ~Paciente();
 	void setCedula(string&);
 	void setNombre(string&);
 	void setApellido(string&);
