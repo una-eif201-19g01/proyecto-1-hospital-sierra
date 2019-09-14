@@ -15,6 +15,7 @@ private:
 public:
 	Pabellon();
 	Pabellon(char, char, int);
+        ~Pabellon();
 	char getSectorPabellon();
 	char getGeneroPabellon();
 	void setGeneroPabellon(char&);
