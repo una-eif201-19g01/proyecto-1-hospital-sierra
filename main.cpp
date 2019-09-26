@@ -118,9 +118,10 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 				cout<<"------------------------------------------------------------------------"<<endl;
 				cout<<"   * 1. Internar un paciente"<<endl;
 				cout<<"   * 2. Dar de alta a un paciente"<<endl;	
-				cout<<"   * 3. Mostrar los datos de un paciente"<<endl;
-				cout<<"   * 4. Cambiar el doctor de un paciente"<<endl;
-				cout<<"   * 5. Volver al sistema principal"<<endl;
+				cout<<"   * 3. Cambiar el doctor de un paciente"<<endl;
+				cout<<"   * 4. Cambiar la cama del paciente"<<endl;
+				cout<<"   * 5. Informe del paciente"<<endl;
+				cout<<"   * 6. Volver al sistema principal"<<endl;
 				cout<<"------------------------------------------------------------------------"<<endl;
 				cin>>op6;
 				switch (op6){
@@ -197,7 +198,10 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 					break
 				case 4:
 						
-						break
+					break
+				case 5:
+						
+					break;
 				default:
 					cout<<"-----------------------------------------------------------------------------"<<endl;
 					cout<<" * Ingreso un numero que no corresponde a ninguna de las opciones posibles,"<<endl;
@@ -206,7 +210,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 					cout<<endl;
 					break;
 				}
-			} while(op6 !=5);
+			} while(op6 !=6);
 		case 2:
 			do{
 				cout<<"------------------------------------------------------------------------"<<endl;
