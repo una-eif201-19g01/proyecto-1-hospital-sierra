@@ -28,6 +28,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 	string esp2,doc2,doc3,cedula,nombre,apellido,direccion,patologia,tipoCirugia,prioridad,fechaCirugia,genero;
 	char sector1, genero1;
 	bool rs1;
+	
 	cout<<endl;
 	cout<<"------------------------------------------------------------------------"<<endl;
 	cout<<"   * Bienvenido al sistema del hospital Esperanza,  *"<<endl;
