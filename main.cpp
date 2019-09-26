@@ -24,7 +24,7 @@ int main() {
 }
 
 void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
-	int respuesta, op1, op2, op3, op4,op5,op6, doc1, cont, esp1, tam;
+	int respuesta, op1, op2, op3, op4,op5,op6,op7, doc1, cont, esp1, tam;
 	string esp2,doc2,doc3,cedula,nombre,apellido,direccion,patologia,tipoCirugia,prioridad,fechaCirugia,genero;
 	char sector1, genero1;
 	bool rs1;
@@ -100,8 +100,8 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 		cout<<"----------------------------------------------------------------------------------------"<<endl;
 		cout<<"   * 1. Pacientes "<<endl;
 		cout<<"   * 2. Doctores "<<endl;
-		cout<<"   * 3. Pabellones"<<endl;
-		cout<<"   * 3. Camas"<<endl;
+		cout<<"   * 3. Mostrar pabellones"<<endl;
+		cout<<"   * 4. Camas"<<endl;
 		cout<<"   * 5. Mostrar especialidades"<<endl;
 		cout<<"   * 6. Salir del sistema"<<endl;
 		cout<<"-----------------------------------------------------------------------------------------"<<endl;
@@ -272,50 +272,32 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 			} while(op5 !=3);
 					
 		case 3:
-			do{
-				cout<<"------------------------------------------------------------------------"<<endl;
-				cout<<"   * Bienvenido al sistema de pabellones, que desea hacer? *  "<<endl;
-				cout<<"------------------------------------------------------------------------"<<endl;
-				cout<<"   * 1. Mostrar los pabellones"<<endl;
-				cout<<"   * 2. Dar de alta a un paciente"<<endl;	
-				cout<<"------------------------------------------------------------------------"<<endl;
-				cin>>op7;
-				switch (op7){
-				case 1:
-				
-					break;
-				default:
-					cout<<"-----------------------------------------------------------------------------"<<endl;
-					cout<<" * Ingreso un numero que no corresponde a ninguna de las opciones posibles,"<<endl;
-					cout<<"   Vuelva a intentarlo"<<endl;
-					cout<<"-----------------------------------------------------------------------------"<<endl;
-					cout<<endl;
-					break;
-				}
-			} while(op7!=);
-				case 4:
-					cout<<"   * Los pabellones son: "<<endl;
-				cout<<endl;
-				for(int pab3=0;pab3<10;pab3++){
-					cout<<pab[pab3].imprimePabellon();
-				}
-				cout<<endl;
-				break;
-			case 5:
-				cout<<"   * Las especialidades son: "<<endl;
-				cout<<endl;
-				for(int esp3=0;esp3<10;esp3++){
-					cout<<esp[esp3].imprimeEspecialidad();
-				}
-				cout<<endl;
-				break;
-			default:
-				cout<<"-----------------------------------------------------------------------------"<<endl;
-				cout<<" * Ingreso un numero que no corresponde a ninguna de las opciones posibles,"<<endl;
-				cout<<"   Vuelva a intentarlo"<<endl;
-				cout<<"-----------------------------------------------------------------------------"<<endl;
-				cout<<endl;
-				break;
+			cout<<"   * Los pabellones son: "<<endl;
+			cout<<endl;
+			for(int pab3=0;pab3<10;pab3++){
+				cout<<pab[pab3].imprimePabellon();
 			}
-		} while (respuesta != 6);
-	}
+			cout<<endl;
+			break;
+			
+		case 4:
+				
+			break;
+		case 5:
+			cout<<"   * Las especialidades son: "<<endl;
+			cout<<endl;
+			for(int esp3=0;esp3<10;esp3++){
+				cout<<esp[esp3].imprimeEspecialidad();
+			}
+			cout<<endl;
+			break;
+		default:
+			cout<<"-----------------------------------------------------------------------------"<<endl;
+			cout<<" * Ingreso un numero que no corresponde a ninguna de las opciones posibles,"<<endl;
+			cout<<"   Vuelva a intentarlo"<<endl;
+			cout<<"-----------------------------------------------------------------------------"<<endl;
+			cout<<endl;
+			break;
+		}
+	} while (respuesta != 6);
+}
