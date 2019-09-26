@@ -15,7 +15,9 @@ int main() {
 	Pabellon pabellones[10];
 	Especialidad especialidades[10];
 	especialidades[0].setEspecialidad("o");
-	
+	for(int pab10=0;pab10<10;pab10++){
+		pabellones[pab10]->liberarCama(pab10);
+	}
 	menu(pabellones,doctores,especialidades,paciente1);
 	
 	return 0;
@@ -92,137 +94,184 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 		pab[pab2]= Pabellon(sector1, genero1, tam);
 	}
 	
-	
-	
-	
 	do {
-		cout<<"------------------------------------------------------------------------"<<endl;
-		cout<<"   * Bienvenido al sistema del hospital Esperanza: *"<<endl;
-		cout<<"-----------------------------------------------------------------------"<<endl;
-		cout<<"   * 1. Internar un paciente "<<endl;
-		cout<<"   * 2. Cambiar doctores "<<endl;
-		cout<<"   * 3. Mostrar doctores "<<endl;
-		cout<<"   * 4. Mostrar pabellones"<<endl;
-		cout<<"   * 5. Mostrar especialidades "<<endl;
+		cout<<"----------------------------------------------------------------------------------------"<<endl;
+		cout<<"   * Bienvenido al sistema del hospital Esperanza, a cual sistema desea entrar?: *"<<endl;
+		cout<<"----------------------------------------------------------------------------------------"<<endl;
+		cout<<"   * 1. Pacientes "<<endl;
+		cout<<"   * 2. Doctores "<<endl;
+		cout<<"   * 3. Pabellones"<<endl;
+		cout<<"   * 3. Camas"<<endl;
+		cout<<"   * 5. Especialidades "<<endl;
 		cout<<"   * 6. Salir del sistema"<<endl;
-		cout<<"-----------------------------------------------------------------------"<<endl;
+		cout<<"-----------------------------------------------------------------------------------------"<<endl;
 		cout<<"   * Ingrese su seleccion: "<<endl;
-		cout<<"-----------------------------------------------------------------------"<<endl;
+		cout<<"-----------------------------------------------------------------------------------------"<<endl;
 		cin>>respuesta;
 		cout<<endl;
 		
 		switch (respuesta){
 		case 1:
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cout<<"   * En cual especialidad va a ingresar el paciente?:  "<<endl;
-			cout<<"------------------------------------------------------------------------"<<endl;
-			for(int es=0;es<10;es++){
-				cout<<esp[es].getEspecialidad()<<endl;
-			}
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cin>>esp1;
-			for(int fil=0;fil<10;fil++){
-				if(esp1==esp[fil].getEspecialidad())
-					rs1=true;
-			}
-			if(rs1==true){
+			do{
 				cout<<"------------------------------------------------------------------------"<<endl;
-				cout<<"   * Ingrese los datos del paciente:  "<<endl;
+				cout<<"   * Bienvenido al sistema de pacientes, que desea hacer? *  "<<endl;
 				cout<<"------------------------------------------------------------------------"<<endl;
-				cout<<"   * Cedula:"<<endl;
-				cin>>cedula;
-				cout<<"   * Nombre:"<<endl;
-				cin>>nombre;
-				cout<<"   * Apellido:"<<endl;
-				cin>>apellido;
-				cout<<"   * Genero:"<<endl;
-				cin>>genero;
-				cout<<"   * Direccion:"<<endl;
-				cin>>direccion;
-				cout<<"   * Patologia:"<<endl;
-				cin>>patologia;
-				cout<<"   * Tipo de cirugia:"<<endl;
-				cin>>tipoCirugia;
-				cout<<"   * Prioridad:"<<endl;
-				cin>>prioridad;
-				cout<<"   * Fecha de la cirugia:"<<endl;
-				cin>>fechaCirugia;
+				cout<<"   * 1. Internar un paciente"<<endl;
+				cout<<"   * 2. Dar de alta a un paciente"<<endl;	
+				cout<<"   * 3. Mostrar los datos de un paciente"<<endl;
+				cout<<"   * 4. Cambiar el doctor de un paciente"<<endl;
+				cout<<"   * 5. Volver al sistema principal"<<endl;
 				cout<<"------------------------------------------------------------------------"<<endl;
-				cout<<"   * Los doctores disponibles son:  "<<endl;
-				cout<<"------------------------------------------------------------------------"<<endl;
-				cont=1;
-				for(int doc1=0;doc1<20;doc1++){
-					if(doc[doc1].getEspecialidad()==esp1){
-						cout<<"   * "<<cont<<"."<<doc[doc1].getNombre()<<endl;
+				cin>>op6;
+				switch (op6){
+				case 1:
+					cout<<"------------------------------------------------------------------------"<<endl;
+					cout<<"   * En cual especialidad va a ingresar el paciente?:  "<<endl;
+					cout<<"------------------------------------------------------------------------"<<endl;
+					cont=1;
+					for(int es=0;es<10;es++){
+						cout<<"  * ["<<cont<<"]"<<esp[es].getEspecialidad()<<endl;
+						
 					}
-					cont++;
+					cout<<"------------------------------------------------------------------------"<<endl;
+					cout<<"   * Digite el numero:  "<<endl;
+					cout<<"------------------------------------------------------------------------"<<endl;
+					cin>>esp1;
+					cont=1;
+					for(int fil=0;fil<10;fil++){
+						if(esp[esp1-1].getEspecialidad()==esp[fil].getEspecialidad())
+							rs1=true;
+					}
+					if(rs1==true){
+						cout<<"------------------------------------------------------------------------"<<endl;
+						cout<<"   * Ingrese los datos del paciente:  "<<endl;
+						cout<<"------------------------------------------------------------------------"<<endl;
+						cout<<"   * Cedula:"<<endl;
+						cin>>cedula;
+						cout<<"   * Nombre:"<<endl;
+						cin>>nombre;
+							cout<<"   * Apellido:"<<endl;
+						cin>>apellido;
+						cout<<"   * Genero:"<<endl;
+						cin>>genero;
+						cout<<"   * Direccion:"<<endl;
+						cin>>direccion;
+						cout<<"   * Patologia:"<<endl;
+						cin>>patologia;
+						cout<<"   * Tipo de cirugia:"<<endl;
+						cin>>tipoCirugia;
+						cout<<"   * Prioridad:"<<endl;
+						cin>>prioridad;
+						cout<<"   * Fecha de la cirugia:"<<endl;
+						cin>>fechaCirugia;
+						cout<<"------------------------------------------------------------------------"<<endl;
+						cout<<"   * Los doctores disponibles son:  "<<endl;
+						cout<<"------------------------------------------------------------------------"<<endl;
+						cont=1;
+						for(int doc1=0;doc1<20;doc1++){
+							if(doc[doc1].getEspecialidad()==esp1){
+								cout<<"   * "<<cont<<"."<<doc[doc1].getNombre()<<endl;
+							}
+							cont++;
+						}
+						cout<<"------------------------------------------------------------------------"<<endl;
+						cout<<"   * Digite el numero del doctor a escoger:  "<<endl;
+						cout<<"------------------------------------------------------------------------"<<endl;
+						cin>>op1;
+						Paciente p1(cedula,genero,nombre,apellido,direccion,patologia,tipoCirugia,1,prioridad,fechaCirugia, &doc[op1-1]);
+						for(int pab1=0;pab1<10;pab1++){
+							string str1, str2;
+							str1 = p1.getGenero();
+							str2 = pab[pab1].getGeneroPabellon();
+							if(str1==str2)
+									pab[pab1].ingresarPaciente(&p1);
+							pab1=10;			
+						}	
+					}
+					break;
+				case 2:
+				
+					break;
+				case 3:
+					
+					break
+				case 4:
+					
+					break
+				default:
+					cout<<"-----------------------------------------------------------------------------"<<endl;
+					cout<<" * Ingreso un numero que no corresponde a ninguna de las opciones posibles,"<<endl;
+					cout<<"   Vuelva a intentarlo"<<endl;
+					cout<<"-----------------------------------------------------------------------------"<<endl;
+					cout<<endl;
 				}
-				cout<<"------------------------------------------------------------------------"<<endl;
-				cout<<"   * Digite el numero del doctor a escoger:  "<<endl;
-				cout<<"------------------------------------------------------------------------"<<endl;
-				cin>>op1;
-				Paciente p1(cedula,genero,nombre,apellido,direccion,patologia,tipoCirugia,1,prioridad,fechaCirugia, &doc[op1-1]);
-				for(int pab1=0;pab1<10;pab1++){
-					string str1, str2;
-					str1 = p1.getGenero();
-					str2 = pab[pab1].getGeneroPabellon();
-					if(str1==str2)
-						pab[pab1].ingresarPaciente(&p1);
-					pab1=10;			
-				}	
-			}
-			break;
+			} while(op6 !=5)
 		case 2:
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cout<<"   * Bienvenido al sistema de Doctores: *"<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cout<<"   * ¿Que desea hacer? "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
-			cout<<"   * 1.Ver Doctores"<<endl;
-			cout<<"   * 2.Eliminar un Doctor"<<endl;
+			cout<<"   * 1.Eliminar un Doctor"<<endl;
+			cout<<"   * 2.Mostrar Doctores"<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cin>>op5;
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cout<<"   * Los doctores actuales son:  "<<endl;
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cont=1;
-			for(int do1=0;do1<20;do1++){
-				cout<<cont<<"   * "<<doc[do1].imprimeDoctor()<<endl;
+			switch (op5){
+			case 1:
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Los doctores actuales son:  "<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cont=1;
+				for(int do1=0;do1<20;do1++){
+					cout<<cont<<"   * "<<doc[do1].imprimeDoctor()<<endl;
+					cout<<endl;
+					cont++;
+				}
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Escriba el numero del doctor a cambiar:  "<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cin>>doc1;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Escriba el nombre del nuevo doctor:  "<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cin>>doc2;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Las especialidades disponibles son:  "<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cont=1;
+				for(int es1=0;es1<10;es1++){
+					cout<<cont<<"   * "<<esp[es1].imprimeEspecialidad()<<endl;
+					cout<<endl;
+					cont++;
+				}
 				cout<<endl;
-				cont++;
-			}
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cout<<"   * Escriba el numero del doctor a cambiar:  "<<endl;
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cin>>doc1;
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cout<<"   * Escriba el nombre del nuevo doctor:  "<<endl;
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cin>>doc2;
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cout<<"   * Las especialidades disponibles son:  "<<endl;
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cont=1;
-			for(int es1=0;es1<10;es1++){
-				cout<<cont<<"   * "<<esp[es1].imprimeEspecialidad()<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Ingrese el numero de la especialidad:  "<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cin>>op3;
+				doc[doc1-1].setNombre(doc2);
+				doc[doc1-1].setEspecialidad(&esp[op3]);
+				break;
+			case 2:
+				cout<<"   * Los Doctores son: "<<endl;
 				cout<<endl;
-				cont++;
+				for(int doc4=0;doc4<20;doc4++){
+					cout<<doc[doc4].imprimeDoctor();
+				}
+				cout<<endl;
+				break;
 			}
-			cout<<endl;
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cout<<"   * Ingrese el numero de la especialidad:  "<<endl;
-			cout<<"------------------------------------------------------------------------"<<endl;
-			cin>>op3;
-			doc[doc1-1].setNombre(doc2);
-			doc[doc1-1].setEspecialidad(&esp[op3]);
 			break;
 		case 3:
-			cout<<"   * Los Doctores son: "<<endl;
-			cout<<endl;
-			for(int doc4=0;doc4<20;doc4++){
-				cout<<doc[doc4].imprimeDoctor();
-			}
-			cout<<endl;
+			cout<<"------------------------------------------------------------------------"<<endl;
+			cout<<"   * Bienvenido al sistema de pabellones, que desea hacer? *  "<<endl;
+			cout<<"------------------------------------------------------------------------"<<endl;
+			cout<<"   * 1. Mostrar los pabellones"<<endl;
+			cout<<"   * 2. Dar de alta a un paciente"<<endl;	
+			
+			cout<<"------------------------------------------------------------------------"<<endl;
+			cin>>op6;
+			switch (op6){
 			break;
 		case 4:
 			cout<<"   * Los pabellones son: "<<endl;
