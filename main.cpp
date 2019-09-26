@@ -101,8 +101,8 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 		cout<<"   * 1. Pacientes "<<endl;
 		cout<<"   * 2. Doctores "<<endl;
 		cout<<"   * 3. Pabellones"<<endl;
-		cout<<"   * 3. Camas"<<endl;
-		cout<<"   * 5. Especialidades "<<endl;
+		cout<<"   * 4. Camas"<<endl;
+		cout<<"   * 5. Mostrar especialidades "<<endl;
 		cout<<"   * 6. Salir del sistema"<<endl;
 		cout<<"-----------------------------------------------------------------------------------------"<<endl;
 		cout<<"   * Ingrese su seleccion: "<<endl;
@@ -150,7 +150,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 						cin>>cedula;
 						cout<<"   * Nombre:"<<endl;
 						cin>>nombre;
-							cout<<"   * Apellido:"<<endl;
+						cout<<"   * Apellido:"<<endl;
 						cin>>apellido;
 						cout<<"   * Genero:"<<endl;
 						cin>>genero;
@@ -262,13 +262,13 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 				break;
 			}
 			break;
+			
 		case 3:
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cout<<"   * Bienvenido al sistema de pabellones, que desea hacer? *  "<<endl;
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cout<<"   * 1. Mostrar los pabellones"<<endl;
 			cout<<"   * 2. Dar de alta a un paciente"<<endl;	
-			
 			cout<<"------------------------------------------------------------------------"<<endl;
 			cin>>op6;
 			switch (op6){
