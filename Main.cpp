@@ -194,7 +194,20 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 					}
 					break;
 				case 2:
-					
+                                     for(int cont=0;cont<10;cont++){
+                                        for(int cont2=0;cont2<20;cont2++){
+                                            if(pab[cont].getPacienteCama(cont2)==p1){
+                                                pab[cont].liberarCama(cont2);
+                                            }
+                                        }
+                                    }
+                                    for (int cont = 0; cont <= 20; cont++) {
+						if (doc[cont].getNombre() == p1.getDoctor())
+							doc[cont].eliminarPaciente(&p1);
+                                    }
+                                    p1.setEstado(0);
+                                    p1.setCama()= NULL;
+                                    p1.setDoctor()= NULL;
 					break;
 				case 3: {
 					for (int cont = 0; cont <= 20; cont++) {
