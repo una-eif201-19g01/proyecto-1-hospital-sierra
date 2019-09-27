@@ -24,7 +24,7 @@ int main() {
 }
 
 void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
-	int respuesta, op1, op2, op3, op4,op5,op6,op7, doc1, cont, esp1, tam;
+	int respuesta, op1, op2, op3, op4, op5, op6, op7, op8, op9, doc1, cont, esp1, tam;
 	string esp2,doc2,doc3,cedula,nombre,apellido,direccion,patologia,tipoCirugia,prioridad,fechaCirugia,genero;
 	char sector1, genero1;
 	bool rs1;
@@ -104,7 +104,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 		cout<<"   * 1. Pacientes "<<endl;
 		cout<<"   * 2. Doctores "<<endl;
 		cout<<"   * 3. Mostrar pabellones"<<endl;
-		cout<<"   * 4. Camas"<<endl;
+		cout<<"   * 4. Mostrar Camas"<<endl;
 		cout<<"   * 5. Mostrar especialidades"<<endl;
 		cout<<"   * 6. Salir del sistema"<<endl;
 		cout<<"-----------------------------------------------------------------------------------------"<<endl;
@@ -194,20 +194,20 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 					}
 					break;
 				case 2:
-                                     for(int cont=0;cont<10;cont++){
-                                        for(int cont2=0;cont2<20;cont2++){
-                                            if(pab[cont].getPacienteCama(cont2)==p1){
-                                                pab[cont].liberarCama(cont2);
-                                            }
-                                        }
-                                    }
-                                    for (int cont = 0; cont <= 20; cont++) {
+					for(int cont=0;cont<10;cont++){
+						for(int cont2=0;cont2<20;cont2++){
+							if(pab[cont].getPacienteCama(cont2)==p1){
+								pab[cont].liberarCama(cont2);
+							}
+						}
+					}
+					for (int cont = 0; cont <= 20; cont++) {
 						if (doc[cont].getNombre() == p1.getDoctor())
 							doc[cont].eliminarPaciente(&p1);
-                                    }
-                                    p1.setEstado(0);
-                                    p1.setCama()= NULL;
-                                    p1.setDoctor()= NULL;
+					}
+						p1.setEstado(0);
+						p1.setCama()= NULL;
+						p1.setDoctor()= NULL;
 					break;
 				case 3: {
 					for (int cont = 0; cont <= 20; cont++) {
@@ -340,6 +340,47 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 			break;
 			
 		case 4:
+			do{
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * Bienvenido al sistema de camas, que desea hacer?:  *"<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cout<<"   * 1.Mostrar camas de un pabellon"<<endl;
+				cout<<"   * 2.Volver al Sistema principal"<<endl;
+				cout<<"------------------------------------------------------------------------"<<endl;
+				cin>>op8;
+				switch (op8){
+				case 1:
+					cont=1;
+					cout<<"   * Los pabellones son: "<<endl;
+					cout<<endl;
+					for(int pab3=0;pab3<10;pab3++){
+						cout<<"["<<cont<<"]"<<pab[pab3].imprimePabellon();
+					}
+					cout<<"------------------------------------------------------------------------"<<endl;
+					cout<<"   * Ingrese el numero del pabellon que desea escojer:  "<<endl;
+					cout<<"------------------------------------------------------------------------"<<endl;
+					cin>>op9;
+					cout<<endl;
+					cout<<"------------------------------------------------------------------------"<<endl;
+					cout<<"   * Las camas de este pabellon son:"<<endl;
+					cout<<"------------------------------------------------------------------------"<<endl;
+					for(int pab4=0;pab4<20;pab4++){
+						cout<<pab[op9]->getCama(pab4)<<endl;
+					}
+					cout<<"------------------------------------------------------------------------"<<endl;
+					cout<<endl;
+					break;
+				default:
+					cout<<"-----------------------------------------------------------------------------"<<endl;
+					cout<<" * Ingreso un numero que no corresponde a ninguna de las opciones posibles,"<<endl;
+					cout<<"   Vuelva a intentarlo"<<endl;
+					cout<<"-----------------------------------------------------------------------------"<<endl;
+					cout<<endl;
+					
+					break;
+				}
+				
+			} while(op8 !=2);
 				
 			break;
 		case 5:
