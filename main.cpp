@@ -196,12 +196,34 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 				case 2:
 					
 					break;
-				case 3: 
+				case 3: {
+					for (int cont = 0; cont <= 20; cont++) {
+						if (doc[cont].getNombre() == p1.getDoctor())
+							doc[cont].eliminarPaciente(&p1);
+					}
+					cout << "------------------------------------------------------------------------" << endl;
+					cout << "   * Los doctores disponibles son:  " << endl;
+					cout << "------------------------------------------------------------------------" << endl;
+					cont = 1;
+					for (int doc1 = 0; doc1 < 20; doc1++) {
+						if (doc[doc1].getEspecialidad() == esp1) {
+							cout << "   * " << cont << "." << doc[doc1].getNombre() << endl;
+						}
+						cont++;
+					}
+					cout << "------------------------------------------------------------------------" << endl;
+					cout << "   * Digite el numero del doctor a escoger:  " << endl;
+					cout << "------------------------------------------------------------------------" << endl;
+					cin >> op1;
+					doc[op1].ingresarPaciente(&p1);
+					p1.setDoctor(doc[op1]);
+					}
 					
-					break
+					
+					break;
 				case 4:
 						
-					break
+					break;
 				case 5:
 						
 					break;
