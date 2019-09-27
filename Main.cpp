@@ -43,7 +43,8 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 		cout<<"   * Ingrese el nombre de la especialidad:  "<<endl;
 		cout<<"------------------------------------------------------------------------"<<endl;
 		cin>>esp2;
-		esp[es1]->setnombre(esp2);
+		Especialidad* espN = new Especialidad(esp2);
+		esp[es1]=espN;
 	}
 	cout<<endl
 		cout<<"------------------------------------------------------------------------"<<endl;
@@ -71,8 +72,8 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 		cout<<"------------------------------------------------------------------------"<<endl;
 		cin>>op4;
 		cout<<endl;
-		doc[do2].setNombre(doc3);
-		doc[do2].setEspecialidad(&esp[op4-1]);
+		Doctor* docN = new Doctor("doc3", esp[op4 - 1], 200);
+		doc[do2].docN;
 	}
 	cout<<endl;
 	cout<<endl;
@@ -195,7 +196,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 				case 2:
 					
 					break;
-				case 3:
+				case 3: 
 					
 					break
 				case 4:
