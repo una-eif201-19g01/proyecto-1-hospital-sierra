@@ -43,6 +43,6 @@ public:
 
 	void liberarCama();
 	//Libera las camas
-
+    
 };
 #endif
