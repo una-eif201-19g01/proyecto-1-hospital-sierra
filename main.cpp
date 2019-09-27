@@ -92,7 +92,8 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 		cin>>genero1;
 		cout<<endl;
 		tam = 20;
-		pab[pab2]= Pabellon(sector1, genero1, tam);
+		Pabellon* pabN = new Pabellon(sector1, genero1, tam);
+		pab[pab2]= pabN ;
 	}
 	
 	do {
