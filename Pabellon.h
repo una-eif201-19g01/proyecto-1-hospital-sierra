@@ -42,6 +42,12 @@ public:
 
 	std::string imprimePabellon();
 	//Da formato para mostrar los pabellones del arreglo
+        
+        Paciente* getPacienteCama(int);
+        //Obtiene el paciente asignado a una cama, de la posicion recibida por parametro
+        
+        Cama* getCama(int);
+        //Obtiene la cama de la posicion recibida por parametro
 
 };
 #endif
