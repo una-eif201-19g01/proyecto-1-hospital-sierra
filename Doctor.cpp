@@ -56,3 +56,20 @@ string Doctor::imprimeDoctor() {
 	reporte += "Nombre del Doctor: " + getNombre() + "\nEspecialidad: " + getEspecialidad()+"\n" + imprimePacientes();
 	return reporte;
 }
+void Doctor::eliminarPaciente(Paciente* paciente){
+    if(listaPaciente[cantidad] == paciente){
+        listaPaciente[cantidad] = NULL;
+    cantidad--;
+    }
+    else{
+        for(int pos = 0; pos < cantidad-1; pos++){
+            if(listaPaciente[pos]== paciente){
+                for(int pos1 = pos;pos1<cantidad;pos++){
+                    listaPaciente[pos1]=listaPaciente[pos1+1];
+                }
+            }
+        }
+    listaPaciente[cantidad]=NULL;
+    cantidad--;
+    }
+}
