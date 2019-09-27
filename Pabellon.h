@@ -48,6 +48,7 @@ public:
         
         Cama* getCama(int);
         //Obtiene la cama de la posicion recibida por parametro
+        int getCantidad(int);
 
 };
 #endif
