@@ -221,7 +221,23 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 					
 					
 					break;
-				case 4:
+				case 4:{
+					for(int cont=0;cont<10;cont++){
+                                        	for(int cont2=0;cont2<20;cont2++){
+                                            		if(pab[cont].getPacienteCama(cont2)==p1){
+                                                		pab[cont].liberarCama(cont2);
+                                            		}
+                                        	}
+                                    	}
+                                    	for(int cont=0;cont<10;cont++){
+                                        	if(pab[cont].getGeneroPabellon()==p1.getGenero()){
+                                            		if(pab[cont].getCantidad()<20){
+                                                		pab[cont].ingresarPaciente[&p1];
+                                                		p1.setCama(pab[cont].getCama(pab[cont].getCantidad()));
+                                            		}
+                                        	}
+                                    	}
+					}
 						
 					break;
 				case 5:
