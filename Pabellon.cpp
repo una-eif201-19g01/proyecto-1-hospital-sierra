@@ -62,3 +62,7 @@ Paciente * Pabellon::getPacienteCama(int numeroCama){
 Cama * Pabellon::getCama(int numeroCama){
     return camas[numeroCama];
 }
+int Pabellon::getCantidad(int cantidad){
+    return cantidad;
+    
+}
