@@ -43,6 +43,7 @@ public:
 	void ingresarPaciente(Paciente* paciente);
 	//Permite ingresar a un paciente
 	//Recibe por parametro a un puntero de Paciente
+        void eliminarPaciente(Paciente* paciente);
 
 };
 #endif
