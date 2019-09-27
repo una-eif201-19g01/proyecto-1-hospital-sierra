@@ -199,7 +199,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 				case 3: {
 					for (int cont = 0; cont <= 20; cont++) {
 						if (doc[cont].getNombre() == p1.getDoctor())
-							doc[cont].eliminarPaciente();
+							doc[cont].eliminarPaciente(&p1);
 					}
 					cout << "------------------------------------------------------------------------" << endl;
 					cout << "   * Los doctores disponibles son:  " << endl;
@@ -225,6 +225,7 @@ void menu(Pabellon pab[10],Doctor doc[20],Especialidad esp[10],Paciente p1){
 						
 					break;
 				case 5:
+					cout << "Datos del Paciente: \n" << p1.imprimePaciente();
 						
 					break;
 				default:
