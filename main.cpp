@@ -247,7 +247,8 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 						if (pab[cont].getGeneroPabellon() == p1.getGenero()) {
 							if (pab[cont].getCantidad() < 20) {
 								pab[cont].ingresarPaciente[&p1];
-								p1.setCama(pab[cont].getCama(pab[cont].getCantidad()));
+								int ubicador= pab[cont].getCantidad;
+								p1.setCama(pab[cont].getCama(ubicador));
 							}
 						}
 					}
@@ -366,7 +367,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 					cout << "   * Las camas de este pabellon son:" << endl;
 					cout << "------------------------------------------------------------------------" << endl;
 					for (int pab4 = 0; pab4 < 20; pab4++) {
-						cout << pab[op9]->getCama(pab4) << endl;
+						cout << pab[op9].getCama(pab4) << endl;
 					}
 					cout << "------------------------------------------------------------------------" << endl;
 					cout << endl;

@@ -18,8 +18,8 @@ public:
 
 	Pabellon(char, char, int);
 	//Constructor con Parametros
-        ~Pabellon();
-		//Destructor
+	~Pabellon();
+	//Destructor
 	char getSectorPabellon();
 	//obtiene el sector del pabellon
 
@@ -43,12 +43,12 @@ public:
 	std::string imprimePabellon();
 	//Da formato para mostrar los pabellones del arreglo
         
-        Paciente* getPacienteCama(int);
+	Paciente* getPacienteCama(int);
         //Obtiene el paciente asignado a una cama, de la posicion recibida por parametro
         
-        Cama* getCama(int);
+	Cama* getCama(int);
         //Obtiene la cama de la posicion recibida por parametro
-        int getCantidad(int);
+	int getCantidad(int);
 
 };
 #endif
