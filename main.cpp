@@ -206,7 +206,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 						if (doc[cont].getNombre() == p1.getDoctor())
 							doc[cont].eliminarPaciente(&p1);
 					}
-					p1.setEstado(0);
+					p1.setEstado();
 					p1.setCama(nullptr);
 					p1.setDoctor(nullptr);
 					break;
