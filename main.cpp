@@ -197,7 +197,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 				case 2:
 					for (int cont = 0; cont < 10; cont++) {
 						for (int cont2 = 0; cont2 < 20; cont2++) {
-							if (pab[cont].getPacienteCama(cont2) == p1) {
+							if (pab[cont].getPacienteCama(cont2) == &p1) {
 								pab[cont].liberarCama(cont2);
 							}
 						}
