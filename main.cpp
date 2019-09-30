@@ -72,7 +72,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 		cout << "------------------------------------------------------------------------" << endl;
 		cin >> op4;
 		cout << endl;
-		Doctor* docN = new Doctor("doc3", &esp[op4 - 1], 200);
+		Doctor* docN = new Doctor("doc3", &esp[op4-1], 200);
 		doc[do2] = docN;
 	}
 	cout << endl;
@@ -92,7 +92,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 		cout << "------------------------------------------------------------------------" << endl;
 		cin >> genero1;
 		cout << endl;
-		tam = 20;
+		int tam = 20;
 		Pabellon* pabN = new Pabellon(sector1, genero1, tam);
 		pab[pab2] = pabN;
 	}
