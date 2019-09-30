@@ -16,7 +16,7 @@ int main() {
 	Especialidad especialidades[10];
 	especialidades[0].setEspecialidad("o");
 	for (int pab10 = 0; pab10 < 10; pab10++) {
-		pabellones[pab10]->liberarCama(pab10);
+		pabellones[pab10].liberarCama(pab10);
 	}
 	menu(pabellones, doctores, especialidades, paciente1);
 
@@ -46,7 +46,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 		Especialidad* espN = new Especialidad(esp2);
 		esp[es1] = espN;
 	}
-	cout << endl
+	cout << endl;
 		cout << "------------------------------------------------------------------------" << endl;
 	cout << "   * Bienvenido al sistema para ingresar doctores *  " << endl;
 	cout << "------------------------------------------------------------------------" << endl;
@@ -72,7 +72,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 		cout << "------------------------------------------------------------------------" << endl;
 		cin >> op4;
 		cout << endl;
-		Doctor* docN = new Doctor("doc3", esp[op4 - 1], 200);
+		Doctor* docN = new Doctor("doc3", &esp[op4 - 1], 200);
 		doc[do2] = docN;
 	}
 	cout << endl;
@@ -173,7 +173,8 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 						cout << "------------------------------------------------------------------------" << endl;
 						cont = 1;
 						for (int doc1 = 0; doc1 < 20; doc1++) {
-							if (doc[doc1].getEspecialidad() == esp1) {
+							string docC=(doc[doc1].getEspecialidad());
+							if ( docC == esp[esp1].getEspecialidad()) {
 								cout << "   * " << cont << "." << doc[doc1].getNombre() << endl;
 							}
 							cont++;
@@ -219,7 +220,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 					cout << "------------------------------------------------------------------------" << endl;
 					cont = 1;
 					for (int doc1 = 0; doc1 < 20; doc1++) {
-						if (doc[doc1].getEspecialidad() == esp1) {
+						if (doc[doc1].getEspecialidad() == esp[esp1].getEspecialidad()) {
 							cout << "   * " << cont << "." << doc[doc1].getNombre() << endl;
 						}
 						cont++;
