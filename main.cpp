@@ -44,7 +44,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 		cout << "------------------------------------------------------------------------" << endl;
 		cin >> esp2;
 		Especialidad* espN = new Especialidad(esp2);
-		esp[es1] = &espN;
+		esp[es1] = espN;
 	}
 	cout << endl;
 		cout << "------------------------------------------------------------------------" << endl;
@@ -244,7 +244,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 						}
 					}
 					for (int cont = 0; cont < 10; cont++) {
-						if (pab[cont].getGeneroPabellon() == p1.getGenero()) {
+						if (std::to_string(pab[cont].getGeneroPabellon()) == p1.getGenero()) {
 							if (pab[cont].getCantidad() < 20) {
 								pab[cont].ingresarPaciente(&p1);
 								int ubicador= pab[cont].getCantidad();
