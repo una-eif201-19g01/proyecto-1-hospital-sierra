@@ -207,8 +207,8 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 							doc[cont].eliminarPaciente(&p1);
 					}
 					p1.setEstado();
-					p1.setCama(nullptr);
-					p1.setDoctor(nullptr);
+					p1.setCama(NULL);
+					p1.setDoctor(NULL);
 					break;
 				case 3: {
 					for (int cont = 0; cont <= 20; cont++) {
