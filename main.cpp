@@ -207,8 +207,8 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 							doc[cont].eliminarPaciente(&p1);
 					}
 					p1.setEstado(0);
-					p1.setCama() = NULL;
-					p1.setDoctor() = NULL;
+					p1.setCama(nullptr);
+					p1.setDoctor(nullptr);
 					break;
 				case 3: {
 					for (int cont = 0; cont <= 20; cont++) {
@@ -230,7 +230,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 					cout << "------------------------------------------------------------------------" << endl;
 					cin >> op1;
 					doc[op1].ingresarPaciente(&p1);
-					p1.setDoctor(doc[op1]);
+					p1.setDoctor(&doc[op1]);
 				}
 
 
@@ -247,7 +247,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 						if (pab[cont].getGeneroPabellon() == p1.getGenero()) {
 							if (pab[cont].getCantidad() < 20) {
 								pab[cont].ingresarPaciente[&p1];
-								int ubicador= pab[cont].getCantidad;
+								int ubicador= pab[cont].getCantidad();
 								p1.setCama(pab[cont].getCama(ubicador));
 							}
 						}
