@@ -44,7 +44,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 		cout << "------------------------------------------------------------------------" << endl;
 		cin >> esp2;
 		Especialidad* espN = new Especialidad(esp2);
-		esp[es1] = espN;
+		esp[es1] = &espN;
 	}
 	cout << endl;
 		cout << "------------------------------------------------------------------------" << endl;
@@ -238,7 +238,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 				case 4: {
 					for (int cont = 0; cont < 10; cont++) {
 						for (int cont2 = 0; cont2 < 20; cont2++) {
-							if (pab[cont].getPacienteCama(cont2) == p1) {
+							if (pab[cont].getPacienteCama(cont2) == &p1) {
 								pab[cont].liberarCama(cont2);
 							}
 						}
