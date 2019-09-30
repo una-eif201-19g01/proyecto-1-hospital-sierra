@@ -246,7 +246,7 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 					for (int cont = 0; cont < 10; cont++) {
 						if (pab[cont].getGeneroPabellon() == p1.getGenero()) {
 							if (pab[cont].getCantidad() < 20) {
-								pab[cont].ingresarPaciente[&p1];
+								pab[cont].ingresarPaciente(&p1);
 								int ubicador= pab[cont].getCantidad();
 								p1.setCama(pab[cont].getCama(ubicador));
 							}
