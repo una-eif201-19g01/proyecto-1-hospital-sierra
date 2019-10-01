@@ -57,7 +57,7 @@ string Pabellon::imprimePabellon() {
 	return reporte;
 }
 Paciente * Pabellon::getPacienteCama(int numeroCama){
-    return camas[numeroCama]->getPaciente;
+    return camas[numeroCama].getPaciente;
 }
 Cama * Pabellon::getCama(int numeroCama){
     return camas[numeroCama];
