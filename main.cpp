@@ -6,17 +6,25 @@
 
 using namespace std;
 
-void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1);
+void menu(Pabellon* pab[10], Doctor* doc[20], Especialidad* esp[10], Paciente p1);
 
 int main() {
 	Paciente paciente1;
 	Cama* cama = NULL;
-	Doctor doctores[20];
-	Pabellon pabellones[10];
-	Especialidad especialidades[10];
-	especialidades[0].setEspecialidad("o");
+	Doctor* doctores[20];
+	for(int tamanno=0; tamanno<20;tamanno++){
+		doctores[tamanno]=NULL;
+	}	
+	Pabellon* pabellones[10];
+	Especialidad* especialidades[10];
+	for(int tamanno=0; tamanno<10;tamanno++){
+		especialidades[tamanno]=NULL;
+		pabellones[tamanno]=NULL;
+		
+	}
+	especialidades[0]->setEspecialidad("o");
 	for (int pab10 = 0; pab10 < 10; pab10++) {
-		pabellones[pab10].liberarCama(pab10);
+		pabellones[pab10]->liberarCama(pab10);
 	}
 	menu(pabellones, doctores, especialidades, paciente1);
 
