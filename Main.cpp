@@ -15,6 +15,7 @@ int main() {
 	for(int tamanno=0; tamanno<20;tamanno++){
 		doctores[tamanno]=NULL;
 	}	
+	
 	Pabellon* pabellones[10];
 	Especialidad* especialidades[10];
 	for(int tamanno=0; tamanno<10;tamanno++){
