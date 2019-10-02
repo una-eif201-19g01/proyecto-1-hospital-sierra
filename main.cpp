@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void menu(Pabellon* pab[10], Doctor* doc[20], Especialidad* esp[10], Paciente p1);
+void menu(Pabellon*, Doctor*, Especialidad*, Paciente );
 
 int main() {
 	Paciente paciente1;
@@ -32,7 +32,7 @@ int main() {
 	return 0;
 }
 
-void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
+void menu(Pabellon* pab, Doctor* doc, Especialidad* esp, Paciente p1) {
 	int respuesta, op1, op2, op3, op4, op5, op6, op7, op8, op9, doc1, cont, esp1, tam;
 	string esp2, doc2, doc3, cedula, nombre, apellido, direccion, patologia, tipoCirugia, prioridad, fechaCirugia, genero;
 	char sector1, genero1;
@@ -80,8 +80,9 @@ void menu(Pabellon pab[10], Doctor doc[20], Especialidad esp[10], Paciente p1) {
 		cout << "   * Ingrese el numero de la especialidad:  " << endl;
 		cout << "------------------------------------------------------------------------" << endl;
 		cin >> op4;
+
 		cout << endl;
-		Doctor* docN = new Doctor("doc3", &esp[op4-1], 200);
+		Doctor* docN = new Doctor(doc3, &esp[op4-1], 200);
 		doc[do2] = docN;
 	}
 	cout << endl;
