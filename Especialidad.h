@@ -12,7 +12,7 @@ public:
 
 	Especialidad(string);
 	//Constructor con parametros que recibe un string
-        ~Especialidad();
+	~Especialidad();
 		//Destructor
 	void setEspecialidad(string);
 	//Permite modificar la especialidad
